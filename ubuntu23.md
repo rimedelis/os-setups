@@ -1,4 +1,4 @@
-# FIRST STEPS
+# First Boot on Ubuntu
 
 1. **Check For Updates**
 
