@@ -43,3 +43,56 @@
 - Git
 - Node.js
 - qBittorrent
+
+## Installing programs with Chocolatey
+
+1. First, install Chocolatey:
+
+   ```powershell
+   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+   ```
+
+2. Use this to never be asked for permission to run (always Yes to prompts):
+
+   ```powershell
+   choco feature enable -n=allowGlobalConfirmation
+   ```
+
+   To disable this:
+
+   ```powershell
+   choco feature disable -n=allowGlobalConfirmation
+   ```
+
+3. Programs to install:
+
+   ```powershell
+   choco install anaconda3 -y
+   choco install git -y
+   choco install googlechrome -y
+   choco install mingw -y
+   choco install microsoft-windows-terminal -y
+   choco install msys2 -y
+   choco install nodejs.install -y
+   choco install python -y
+   choco install qbittorrent -y
+   choco install ruby -y
+   choco install vscode -y
+   choco install wsl2 --params "/Version:2 /Retry:true" -y
+   ```
+
+## Install Ruby On Rails on Windows 11: [GoRails Setup](https://gorails.com/setup/windows/11)
+
+Other programs with Chocolatey:
+
+   ```powershell
+   choco install sonicpi -y
+   choco install vmware-workstation-player -y
+   choco install ngrok -y
+   choco install gramps -y
+   choco install thonny -y
+   ```
+
+Other programs not available with Chocolatey:
+
+- UltraStar Deluxe
