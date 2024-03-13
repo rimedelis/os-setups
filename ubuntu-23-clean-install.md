@@ -96,6 +96,14 @@
     sudo apt install gnome-software-plugin-flatpak
     ```
 
+18. **Install Snap??**
+
+19. **Enable Uncomplicated Firewall**
+
+    ```bash
+    sudo ufw enable
+    ```
+
 # INSTALLATION LIST
 
 **Software app:**
@@ -107,7 +115,16 @@
   ```
 
 - Microsoft Edge
+
+
 - Google Chrome
+
+  ```
+  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+  sudo apt install ./google-chrome-stable_current_amd64.deb
+  ```
+
 - Visual Studio Code
 
   ```bash
