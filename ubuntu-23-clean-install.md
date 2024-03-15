@@ -1,6 +1,8 @@
-# First Boot on Ubuntu
+# Clean Install -- Ubuntu 23
 
-1. **Check For Updates**
+## Essential Steps
+
+1. **Check for Updates (apt stands for aptitude. They say `apt` doesn't need to be preceeded by sudo as it automatically performs operations with superuser privileges when necessary.)**
 
    ```bash
    sudo apt update && sudo apt upgrade
@@ -11,10 +13,10 @@
    - Under the Ubuntu Software tab, make sure you have checked all of the Main, Universe, Restricted and Multiverse repository checked.
    - Move to the Other Software tab, check the option of Canonical Partners.
 
-3. **Install All Missing / Additional Drivers**
+3. **Install all missing/additional drivers**
    - Click on “Additional Drivers” Tab and follow the specific instructions provided on the screen.
 
-4. **Installing Complete Multimedia Support**
+4. **Install complete multimedia support**
 
    ```bash
    sudo apt install ubuntu-restricted-extras
@@ -36,12 +38,98 @@
 
    ```bash
    gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+   # other dock settings that might be interesting
+
+   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+   gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+   gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+   gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
    ```
 
-7. **Turn On Night Light**
-   - Settings > Devices > Screen Display > Night Light.
+7. **Enable Night Light and Dark Mode**
+   - Settings > Screen Display > Night Light
+   - Settings > Appearance > Dark Mode
 
-8. **Cleaning**
+8. **See weather forecast on calendar's sidebar (check if equivalent snap exists?)**
+
+   ```bash
+   sudo apt install gnome-weather
+   ```
+
+9. **Disable Startup Applications from the gnome app list.**
+
+   - In the Startup Application Preferences, you can disable, add or remove the programs.
+
+10. **Opt out of data collection in Ubuntu (optional)**
+
+    - System Settings -> Privacy and then set the Problem Reporting to Manual or you can set it to Never.
+
+11. **Auto-hide Dock**
+
+12. **Add my profile photo to the lock screen**
+
+13. **Disable Bluetooth at startup (preferred)**
+
+    ```bash
+    sudo systemctl disable bluetooth.service
+    ```
+
+14. **Deactivate Bluetooth on system startup (alternative)**
+    - Edit `/etc/bluetooth/main.conf` to:
+
+      ```bash
+      AutoEnable=false
+      ```
+
+15. **Toggle Num Lock ON at startup**
+
+    ```bash
+    gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
+    ```
+
+16. **Always show Hidden Files**
+
+    ```bash
+    gsettings set org.gnome.nautilus.preferences show-hidden-files true
+    ```
+
+   *(Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.)*
+
+17. **Install Flatpak (adds Software app (white icon) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)**
+
+    ```bash
+    # [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
+    sudo apt install flatpak
+    sudo apt install gnome-software-plugin-flatpak
+
+    # adds the Flathub repository. Flathub is the best place to get Flatpak apps
+    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+    ```
+
+18. **Install Snap (current versions of Ubuntu have it preinstalled)**
+
+  ```bash
+    sudo apt install snapd
+    ```
+
+19. **Enable Uncomplicated Firewall**
+
+    ```bash
+    sudo ufw enable
+    ```
+
+20. **Login to Ubuntu One account**
+
+21. Show battery percentage
+
+- Open Settings
+- Go to Power section
+- Scroll to the bottom
+- Check “Show battery percentage”
+
+22. **Cleaning up**
 
    ```bash
    # To remove the packages that failed to install completely,
@@ -54,68 +142,43 @@
    sudo apt-get autoremove
    ```
 
-9. **Disable Startup Applications from the gnome app list.**
-   - In the Startup Application Preferences, you can disable, add or remove the programs.
+23. **Disable startup programs at Startup Application Preferences**
 
-10. **Opt out of data collection in Ubuntu (optional)**
-    - System Settings -> Privacy and then set the Problem Reporting to Manual or you can set it to never.
+24. **Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)**
 
-11. **Auto-hide Dock**
+```bash
+# Add the apt-fast PPA (Personal Package Archive) to the system's software sources.
+# This repository provides the apt-fast package, which is a shell script wrapper for apt-get and aptitude
+# that accelerates package downloads by using multiple connections per package.
+sudo add-apt-repository ppa:apt-fast/stable
 
-12. **Add my profile photo to the lock screen**
+# Update the package index to ensure that the latest package lists from all repositories, including the newly added PPA,
+# are available for installation.
+sudo apt-get update
 
-13. **Disable Bluetooth From Automatically Starting At Boot**
+# Install the apt-fast package from the apt-fast PPA.
+sudo apt-get install apt-fast
+```
 
-    ```bash
-    sudo systemctl disable bluetooth.service
-    ```
+25. 
 
-14. **How To Set Num Lock as Default on Boot in Ubuntu**
-
-    ```bash
-    gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
-    ```
-
-15. **Deactivate Bluetooth on system startup**
-    - Changing `/etc/bluetooth/main.conf` to:
-
-      ```bash
-      AutoEnable=false
-      ```
-
-16. **Always show Hidden Files**
-
-    ```bash
-    gsettings set org.gnome.nautilus.preferences show-hidden-files true
-    ```
-
-17. **Install Flatpak, [Flatpak Setup](https://flatpak.org/setup/Ubuntu)**
-
-    ```bash
-    sudo apt install flatpak
-    sudo apt install gnome-software-plugin-flatpak
-    ```
-
-18. **Install Snap??**
-
-19. **Enable Uncomplicated Firewall**
-
-    ```bash
-    sudo ufw enable
-    ```
-
-# INSTALLATION LIST
-
-**Software app:**
+## Programs to install
 
 - Git
 
   ```bash
+
+  # why use the apt-get instead of simply apt install?
   sudo apt-get install git-all
   ```
 
-- Microsoft Edge
-
+- Microsoft Edge (for most recent version, visit: https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/)
+   
+  ```bash
+  cd ~/Downloads
+  wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+  sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+  ```
 
 - Google Chrome
 
@@ -125,7 +188,7 @@
   sudo apt install ./google-chrome-stable_current_amd64.deb
   ```
 
-- Visual Studio Code
+- Visual Studio Code (if installing via Snap, omit `--classic`)
 
   ```bash
   sudo snap install code --classic
@@ -134,7 +197,25 @@
 - Thonny
   - Installed version 4.0.1, deb, from the Software app because snap didn't let me install packages on Raspberry, didn't recognize the existence of the Raspberry.
 
-# EXTRAS
+- VLC Player
+
+   ```bash
+   sudo apt install vlc
+   ```
+
+- GIMP?
+
+   ```bash
+   sudo apt install gimp
+   ```
+
+- Wine (Wine is a compatibility layer that allows you to run Windows applications on Ubuntu)
+
+   ```bash
+   sudo apt install wine
+   ```
+
+## Extras
 
 **In Thonny, to allow Raspberry to run:**
 

@@ -1,6 +1,6 @@
-# First Boot on Windows 11
+# Clean Install -- Windows 11
 
-## Optimization Checklist for Windows
+## Essential Steps
 
 1. Check for regular and additional updates!
 
@@ -44,7 +44,7 @@
 - Node.js
 - qBittorrent
 
-## Installing programs with Chocolatey
+## Installing with Chocolatey
 
 1. First, install Chocolatey:
 
@@ -81,7 +81,7 @@
    choco install wsl2 --params "/Version:2 /Retry:true" -y
    ```
 
-## Install Ruby On Rails on Windows 11: [GoRails Setup](https://gorails.com/setup/windows/11)
+## Installing Ruby On Rails on Windows 11: [GoRails Setup](https://gorails.com/setup/windows/11)
 
 Other programs with Chocolatey:
 
