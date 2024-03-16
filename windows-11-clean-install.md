@@ -81,7 +81,7 @@
    choco install wsl2 --params "/Version:2 /Retry:true" -y
    ```
 
-Other programs with Chocolatey:
+4. Other programs:
 
    ```powershell
    choco install sonicpi -y
@@ -90,3 +90,4 @@ Other programs with Chocolatey:
    choco install gramps -y
    choco install thonny -y
    ```
+   
