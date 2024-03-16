@@ -131,14 +131,6 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
    ```
 
-### Install Snap (current versions of Ubuntu have it preinstalled, it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store)
-
-   ```bash
-   sudo apt install snapd
-   # to update all snaps
-   sudo snap refresh
-   ```
-
 ### Login to Ubuntu One account
 
 ### Show battery percentage
@@ -221,7 +213,9 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 
 ## Programs to install
 
-- As a rule, prefer snaps whenever available. For example, `sudo apt install package-name` installs the package version available in the Ubuntu repositories managed by APT (Advanced Package Tool). This version may be different from the version available as a snap package from the Snap Store, installable running the command `sudo snap install package-name`.
+- In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
+- For example, `sudo apt install package-name` installs the package version available in the Ubuntu repositories managed by APT (Advanced Package Tool). This version may be different from the version available as a snap package from the Snap Store, installable running the command `sudo snap install package-name`.
+- To manually fetch the latest versions of installed snaps from the Snap Store and update them: `sudo snap refresh`.
 
 ### Git
 

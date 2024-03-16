@@ -2,7 +2,7 @@
 
 ## Essential Steps
 
-1. Check for regular and additional updates!
+1. Check for regular and additional updates
 
 2. Disable/uninstall bloatware and startup apps
 
@@ -18,7 +18,7 @@
 
 8. Change default browser and any other default apps
 
-9. Update drivers using Windows Update or trying Device Manager
+9. Update drivers using Windows Update and Device Manager
 
 10. Change privacy settings: General and Diagnostics
 
@@ -81,8 +81,6 @@
    choco install wsl2 --params "/Version:2 /Retry:true" -y
    ```
 
-## Installing Ruby On Rails on Windows 11: [GoRails Setup](https://gorails.com/setup/windows/11)
-
 Other programs with Chocolatey:
 
    ```powershell
@@ -92,7 +90,3 @@ Other programs with Chocolatey:
    choco install gramps -y
    choco install thonny -y
    ```
-
-Other programs not available with Chocolatey:
-
-- UltraStar Deluxe
