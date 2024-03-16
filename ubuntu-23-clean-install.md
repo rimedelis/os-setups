@@ -104,7 +104,7 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
 
 *(Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.)*
 
-### Install Flatpak (adds the Software app (white icon) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
+### Install Flatpak (adds the Programs app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
 
     ```bash
     # [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
