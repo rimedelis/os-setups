@@ -21,7 +21,7 @@ Move to the Other Software tab, check the option of Canonical Partners.
 
 ### Install all missing/additional drivers
 
-Click on “Additional Drivers” Tab and follow the specific instructions provided on the screen.
+Click on "Additional Drivers" Tab and follow the specific instructions provided on the screen.
 
 ### Install complete multimedia support
 
