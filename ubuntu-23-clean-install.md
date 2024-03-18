@@ -68,13 +68,12 @@ Click on “Additional Drivers” Tab and follow the specific instructions provi
    gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 
    # Auto-hide the Dock
-
+   gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
    ```
 
 ### Enable Night Light and Dark Style
 
-Settings > Screen Display > Night Light -- set to Sunset to Sunrise
-
+Settings > Screen Display > Night Light -- set to "Sunset to Sunrise"
 Settings > Appearance > Dark Style
 
 ### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
@@ -90,8 +89,6 @@ In the Startup Application Preferences, you can disable, add or remove the progr
 ### Opt out of data collection in Ubuntu (optional)
 
 System Settings > Privacy and then set the Problem Reporting to Manual or you can set it to Never.
-
-### Add my profile photo to the lock screen
 
 ### Disable Bluetooth at startup (preferred)
 
@@ -131,10 +128,6 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
    flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
    ```
 
-### Login to Ubuntu One account
-
-### Show battery percentage
-
 ```bash
    gsettings set org.gnome.desktop.interface show-battery-percentage true
    ```
@@ -151,8 +144,6 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
    # Finally, to remove the unwanted software dependencies,
    sudo apt-get autoremove
    ```
-
-### Disable startup programs at Startup Application Preferences
 
 ### Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)
 
@@ -180,12 +171,6 @@ Software & Updates > Livepatch
 
 Settings > Default Applications
 
-### Install GS Connect: For Android Phone Users
-
-### Setup Cloud Accounts
-
-### Install GNOME Sushi for Quick Look feature (macOS)
-
 ### Enable Location Services
 
 Settings > Privacy > Location Services
@@ -198,8 +183,6 @@ gsettings set org.gnome.system.location enabled true
 
 Settings > Ubuntu Desktop > Enchanced Tilling
 
-### Update Firmware via the Firware Updater app
-
 ### Adjust Mouse and Touchpad settings
 
 Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
@@ -210,6 +193,22 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 
    gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
    ```
+
+### Add my profile photo to the lock screen
+
+### Update Firmware via the Firware Updater app
+
+### Setup Cloud Accounts
+
+### Disable startup programs at Startup Application Preferences
+
+### Login to Ubuntu One account
+
+### Show battery percentage
+
+### Install GS Connect: For Android Phone Users
+
+### Install GNOME Sushi for Quick Look feature (macOS)
 
 ## Programs to install
 
