@@ -4,12 +4,12 @@
 
 ### Check for Updates (apt stands for Aptitude. They say `apt` doesn't need to be preceeded by sudo as it automatically performs operations with superuser privileges when necessary.)
 
-   ```bash
-   sudo apt update && sudo apt upgrade
+```bash
+sudo apt update && sudo apt upgrade
 
-   # restart the computer for changes to apply
-   sudo reboot now
-   ```
+# restart the computer for changes to apply
+sudo reboot now
+```
 
 ### Enable additional repositories for more software
 
@@ -25,62 +25,63 @@ Click on “Additional Drivers” Tab and follow the specific instructions provi
 
 ### Install complete multimedia support
 
-   ```bash
-   sudo apt install ubuntu-restricted-extras
-   ```
+```bash
+sudo apt install ubuntu-restricted-extras
+```
 
 ### Improve battery life by installing TLP
 
-   ```bash
-   sudo apt-get install tlp
-   
-   # or this one, with extra focus on Radio Device Wizard
-   sudo apt-get install tlp tlp-rdw
+```bash
+sudo apt-get install tlp
 
-   # Once installed, run this command
-   sudo tlp start
+# or this one, with extra focus on Radio Device Wizard
+sudo apt-get install tlp tlp-rdw
 
-   # To check the status of TLP and see its applied settings
-   sudo tlp-stat
+# Once installed, run this command
+sudo tlp start
 
-   # To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
-   ```
+# To check the status of TLP and see its applied settings
+sudo tlp-stat
+
+# To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
+```
 
 ### Change Dock settings
 
-   ```bash
-   # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
-   gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+```bash
+# Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 
-   # Disable panel mode, making the dock float instead
-   gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+# Disable panel mode, making the dock float instead
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 
-   # Dock on the bottom of the screen
-   gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+# Dock on the bottom of the screen
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 
-   # Dock without transparency effects
-   gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+# Dock without transparency effects
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
 
-   # Dock icons' size set to 64
-   gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+# Dock icons' size set to 64
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
 
-   # Dock icons become backlit
-   gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
+# Dock icons become backlit
+gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 
-   # Auto-hide the Dock
-   gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
-   ```
+# Auto-hide the Dock
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+```
 
 ### Enable Night Light and Dark Style
 
 Settings > Screen Display > Night Light -- set to "Sunset to Sunrise"
+
 Settings > Appearance > Dark Style
 
 ### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
 
-   ```bash
-   sudo apt install gnome-weather
-   ```
+```bash
+sudo apt install gnome-weather
+```
 
 ### Disable Startup Applications from the gnome app list
 
@@ -92,58 +93,55 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
 
 ### Disable Bluetooth at startup (preferred)
 
-    ```bash
-    sudo systemctl disable bluetooth.service
-    ```
+```bash
+sudo systemctl disable bluetooth.service
+```
 
 ### Disable Bluetooth at startup (alternative)
 
-   Edit `/etc/bluetooth/main.conf` to:
+Edit `/etc/bluetooth/main.conf` to:
 
-   ```bash
-   AutoEnable=false
-   ```
+```bash
+AutoEnable=false
+```
 
 ### Enable Num Lock at startup
 
-   ```bash
-   gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
-   ```
+```bash
+gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
+```
 
 ### Always show Hidden Files
 
-   ```bash
-   gsettings set org.gnome.nautilus.preferences show-hidden-files true
-   ```
+```bash
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
+```
 
 *(Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.)*
 
 ### Install Flatpak (adds the Software app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
 
-   ```bash
-   # [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
-   sudo apt install flatpak
-   sudo apt install gnome-software-plugin-flatpak
-   # adds the Flathub repository. Flathub is the best place to get Flatpak apps
-   flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-   ```
-
 ```bash
-   gsettings set org.gnome.desktop.interface show-battery-percentage true
-   ```
+# [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
+sudo apt install flatpak
+sudo apt install gnome-software-plugin-flatpak
+
+# adds the Flathub repository. Flathub is the best place to get Flatpak apps
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
 
 ### Clean up afterwards
 
-   ```bash
-   # To remove the packages that failed to install completely,
-   sudo apt-get autoclean
+```bash
+# To remove the packages that failed to install completely,
+sudo apt-get autoclean
 
-   # Additionally, to remove the apt-cache,
-   sudo apt-get clean
+# Additionally, to remove the apt-cache,
+sudo apt-get clean
 
-   # Finally, to remove the unwanted software dependencies,
-   sudo apt-get autoremove
-   ```
+# Finally, to remove the unwanted software dependencies,
+sudo apt-get autoremove
+```
 
 ### Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)
 
@@ -177,7 +175,7 @@ Settings > Privacy > Location Services
 
 ```bash
 gsettings set org.gnome.system.location enabled true
-   ```
+```
 
 ### Enable Enchanced Tilling
 
@@ -188,11 +186,17 @@ Settings > Ubuntu Desktop > Enchanced Tilling
 Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 
 ```bash
-   gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
-   gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
+gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
+gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
 
-   gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-   ```
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+```
+
+### Show battery percentage
+
+```bash
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+```
 
 ### Add my profile photo to the lock screen
 
@@ -204,8 +208,6 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 
 ### Login to Ubuntu One account
 
-### Show battery percentage
-
 ### Install GS Connect: For Android Phone Users
 
 ### Install GNOME Sushi for Quick Look feature (macOS)
@@ -213,38 +215,40 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 ## Programs to install
 
 - In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
+
 - For example, `sudo apt install package-name` installs the package version available in the Ubuntu repositories managed by APT (Advanced Package Tool). This version may be different from the version available as a snap package from the Snap Store, installable running the command `sudo snap install package-name`.
+
 - To manually fetch the latest versions of installed snaps from the Snap Store and update them: `sudo snap refresh`.
 
 ### Git
 
-  ```bash
-  sudo apt install git-all
-  ```
+```bash
+sudo apt install git-all
+```
 
 ### Microsoft Edge (for most recent version, visit: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>)
 
-  ```bash
-  cd ~/Downloads
+```bash
+cd ~/Downloads
 
-  wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 
-  sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
-  ```
+sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+```
 
 ### Google Chrome
 
-  ```bash
-  wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
-  sudo apt install ./google-chrome-stable_current_amd64.deb
-  ```
+sudo apt install ./google-chrome-stable_current_amd64.deb
+```
 
 ### VS Code (or VSCodium)
 
-  ```bash
-  sudo snap install code --classic
-  ```
+```bash
+sudo snap install code --classic
+```
 
 ### Thonny
 
@@ -263,62 +267,62 @@ sudo usermod -a -G dialout <username>
 
 ### VLC Player
 
-   ```bash
-   sudo snap install vlc
-   ```
+```bash
+sudo snap install vlc
+```
 
 ### GIMP?
 
-   ```bash
-   sudo snap install gimp
-   ```
+```bash
+sudo snap install gimp
+```
 
 ### FFmpeg
 
 ```bash
-   sudo snap install ffmpeg
-   ```
+sudo snap install ffmpeg
+```
 
 ### Wine or Bottles (Wine is a compatibility layer that allows you to run Windows applications on Ubuntu)
 
-   ```bash
-   sudo apt install wine
-   ```
+```bash
+sudo apt install wine
+```
 
 ### QBittorrent
 
 ```bash
 # Unofficial snap
 sudo snap install qbittorrent-arnatious
-   ```
+```
 
 ```bash
-   sudo apt install qbittorrent
-   ```
+sudo apt install qbittorrent
+```
 
 ### SimpleScreenRecorder?
 
-   ```bash
-   sudo apt install simplescreenrecorder
-   ```
+```bash
+sudo apt install simplescreenrecorder
+```
 
 ### Virtual Machine Manager
 
-   ```bash
-   sudo apt install virt-manager
-   ```
+```bash
+sudo apt install virt-manager
+```
 
 ### Stacer
 
-   ```bash
-   sudo apt install stacer
-   ```
+```bash
+sudo apt install stacer
+```
 
 ### Obsidian
 
 ```bash
-   sudo snap install obsidian --classic
-   ```
+sudo snap install obsidian --classic
+```
 
 ### Discord
 
@@ -328,16 +332,17 @@ sudo snap install discord
 
 ### ufw - Uncomplicated Firewall
 
-   ```bash
-   sudo snap install ufw
-   sudo ufw status
-   
-   # If disabled, run this command
-   sudo ufw enable
-   # This app allows control over our ports.
-   # Example: if I'm running an SSH server on port 22 and I want to disable this port to prevent connections from remote computers, I'd use this command
-   sudo ufw deny 22/tcp
-   ```
+```bash
+sudo snap install ufw
+sudo ufw status
+
+# If disabled, run this command
+sudo ufw enable
+
+# This app allows control over our ports.
+# Example: if I'm running an SSH server on port 22 and I want to disable this port to prevent connections from remote computers, I'd use this command
+sudo ufw deny 22/tcp
+```
 
 ## Extras
 
@@ -356,20 +361,20 @@ This can be done using Aptitude or SPM:
 #### Using Aptitude
 
 ```bash
-   # To hold a package and thus prevent apt from making changes to it
-   sudo apt-mark hold package_name
+# To hold a package and thus prevent apt from making changes to it
+sudo apt-mark hold package_name
 
-   # To list all the packages that are held
-   sudo apt-mark showhold
+# To list all the packages that are held
+sudo apt-mark showhold
 
-   # To remove hold on a package
-   sudo apt-mark unhold package_name
-   ```
+# To remove hold on a package
+sudo apt-mark unhold package_name
+```
 
 #### Using the installable Synaptic Package Manager
 
 ```bash
-   sudo apt install synaptic
+sudo apt install synaptic
 
-   # The rest is done via the app's GUI.
-   ```
+# The rest is done via the app's GUI.
+```
