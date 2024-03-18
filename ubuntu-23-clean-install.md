@@ -2,7 +2,7 @@
 
 ## Essential Steps
 
-### Check for Updates (apt stands for aptitude. They say `apt` doesn't need to be preceeded by sudo as it automatically performs operations with superuser privileges when necessary.)
+### Check for Updates (apt stands for Aptitude. They say `apt` doesn't need to be preceeded by sudo as it automatically performs operations with superuser privileges when necessary.)
 
    ```bash
    sudo apt update && sudo apt upgrade
@@ -158,7 +158,7 @@ System Settings > Privacy and then set the Problem Reporting to Manual or you ca
 
 ```bash
 # Add the apt-fast PPA (Personal Package Archive) to the system's software sources.
-# This repository provides the apt-fast package, which is a shell script wrapper for apt-get and aptitude
+# This repository provides the apt-fast package, which is a shell script wrapper for apt-get and Aptitude
 # that accelerates package downloads by using multiple connections per package.
 sudo add-apt-repository ppa:apt-fast/stable
 
@@ -220,8 +220,7 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
 ### Git
 
   ```bash
-  # why use the apt-get instead of simply apt install?
-  sudo apt-get install git-all
+  sudo apt install git-all
   ```
 
 ### Microsoft Edge (for most recent version, visit: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>)
@@ -242,7 +241,7 @@ Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
   sudo apt install ./google-chrome-stable_current_amd64.deb
   ```
 
-### VS Code (if installing via Snap, omit `--classic`) (or VSCodium)
+### VS Code (or VSCodium)
 
   ```bash
   sudo snap install code --classic
@@ -353,7 +352,9 @@ libgl1+libglx-mesa0 libegl1
 
 ### Prevent a Package From Being Updated in Ubuntu ([How to prevent a package from being updated in Ubuntu](https://itsfoss.com/prevent-package-update-ubuntu/))
 
-#### Using aptitude
+This can be done using Aptitude or SPM:
+
+#### Using Aptitude
 
 ```bash
    # To hold a package and thus prevent apt from making changes to it
