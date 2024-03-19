@@ -2,49 +2,37 @@
 
 ## Essential Steps
 
-### Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
+### 1. Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
-
-# restart the computer for changes to apply
-sudo reboot now
 ```
 
-### Enable additional repositories for more software
+---
 
-Using the Super Key + S shortcut, search for "Software & Updates".
+**Restart the computer for changes to apply: `sudo reboot now`**
+
+---
+
+### 2. Enable additional repositories for more software
+
+Using the Super Key to open the Activities overview and search for "Software & Updates".
 
 Under "Ubuntu Software", check all the options: "Main", "Universe", "Restricted" and "Multiverse" repositories.
 
 Under "Other Software", check the option "Canonical Partners".
 
-### Install all missing/additional drivers
+### 3. Install all missing/additional drivers
 
 Under "Additional Drivers", follow the specific instructions provided on the screen.
 
-### Install complete multimedia support
+### Update Firmware via the Firware Updater app
 
-```bash
-sudo apt install ubuntu-restricted-extras
-```
+---
 
-### Improve battery life by installing TLP
+**Restart the computer for changes to apply: `sudo reboot now`**
 
-```bash
-sudo apt-get install tlp
-
-# or this one, with extra focus on Radio Device Wizard
-sudo apt-get install tlp tlp-rdw
-
-# Once installed, run this command
-sudo tlp start
-
-# To check the status of TLP and see its applied settings
-sudo tlp-stat
-
-# To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
-```
+---
 
 ### Change Dock settings
 
@@ -71,38 +59,23 @@ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 ```
 
-### Enable Night Light and Dark Style
+### Adjust Mouse and Touchpad settings
 
-Under "Screen Display", set "Night Light" to "Sunset to Sunrise".
-
-Under "Appearance", enable "Dark Style".
-
-### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
+Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
 
 ```bash
-sudo apt install gnome-weather
+gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
+gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
+
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
-### Disable Startup Applications from the gnome app list
+### Show battery percentage
 
-Under "Startup Application Preferences", disable or remove the programs.
-
-### Opt out of data collection in Ubuntu (optional)
-
-Under "Privacy", set "Problem Reporting" to "Manual" or to "Never".
-
-### Disable Bluetooth at startup (preferred)
+Under "Battery", enable "Show battery percentage".
 
 ```bash
-sudo systemctl disable bluetooth.service
-```
-
-### Disable Bluetooth at startup (alternative)
-
-Edit `/etc/bluetooth/main.conf` to:
-
-```bash
-AutoEnable=false
+gsettings set org.gnome.desktop.interface show-battery-percentage true
 ```
 
 ### Enable Num Lock at startup
@@ -117,18 +90,103 @@ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
-### Install Flatpak (adds the Software app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
+### Enable Location Services
 
-Note: Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.
+Under "Privacy", enable "Location Services".
 
 ```bash
-# [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
-sudo apt install flatpak
-sudo apt install gnome-software-plugin-flatpak
-
-# adds the Flathub repository. Flathub is the best place to get Flatpak apps
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+gsettings set org.gnome.system.location enabled true
 ```
+
+### Disable Bluetooth at startup
+
+```bash
+sudo systemctl disable bluetooth.service
+```
+
+### Enable Night Light and Dark Style
+
+Under "Screen Display", set "Night Light" to "Sunset to Sunrise".
+
+Under "Appearance", enable "Dark Style".
+
+### Enable Enchanced Tilling
+
+Under "Ubuntu Desktop", enable "Enchanced Tilling".
+
+### Opt out of data collection in Ubuntu
+
+Under "Privacy", set "Problem Reporting" to "Manual" or to "Never".
+
+---
+
+**Restart the computer for changes to apply: `sudo reboot now`**
+
+---
+
+## Packages to install
+
+- In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
+
+- For example, `sudo apt install package-name` installs the package version available in the Ubuntu repositories managed by APT (Advanced Package Tool). This version may be different from the version available as a snap package from the Snap Store, installable running the command `sudo snap install package-name`.
+
+- To manually fetch the latest versions of installed snaps from the Snap Store and update them: `sudo snap refresh`.
+
+### ubuntu-restricted-extras -- software package for the computer operating system Ubuntu that allows the user to install essential software which is not already included due to legal or copyright reasons
+
+```bash
+sudo apt install ubuntu-restricted-extras
+```
+
+### TLP -- command line utility for Linux, saving laptop battery power
+
+```bash
+sudo apt-get install tlp
+
+# Once installed, run this command
+sudo tlp start
+
+# To check the status of TLP and see its applied settings
+sudo tlp-stat
+
+# To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
+```
+
+### Git -- distributed version control system
+
+```bash
+sudo apt install git-all
+```
+
+### Microsoft Edge (for most recent version, visit this page and then edit the link in the command below: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>) -- web browser
+
+```bash
+cd ~/Downloads
+
+wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+
+sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
+```
+
+### Google Chrome -- web browser
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install ./google-chrome-stable_current_amd64.deb
+```
+
+### VS Code (or VSCodium) -- source-code editor
+
+```bash
+sudo snap install code --classic
+```
+
+---
+
+**Restart the computer for changes to apply: `sudo reboot now`**
+
+---
 
 ### Clean up afterwards
 
@@ -141,6 +199,62 @@ sudo apt-get clean
 
 # Finally, to remove the unwanted software dependencies,
 sudo apt-get autoremove
+```
+
+### Set Default Applications
+
+Under "Settings", set the Default Applications.
+
+### Disable Startup Applications
+
+Under "Startup Application Preferences", disable or remove the programs.
+
+### Login to Ubuntu One account
+
+### Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs)
+
+Under "Software & Updates", enable "Livepatch".
+
+### Change login screen photo
+
+Under "Users", edit the login screen photo.
+
+### Setup Online Accounts
+
+Under "Online Accounts", select an account from the list.
+
+---
+
+**Restart the computer for changes to apply: `sudo reboot now`**
+
+---
+
+## Optional packages and extras
+
+### Flatpak (adds the Software app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
+
+Note: Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.
+
+```bash
+# [Flatpak Setup](https://flatpak.org/setup/Ubuntu)
+sudo apt install flatpak
+
+sudo apt install gnome-software-plugin-flatpak
+
+# adds the Flathub repository. Flathub is the best place to get Flatpak apps
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+```
+
+### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
+
+```bash
+sudo apt install gnome-weather
+```
+
+### Stacer -- system optimizer and application monitor
+
+```bash
+sudo apt install stacer
 ```
 
 ### Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)
@@ -159,96 +273,7 @@ sudo apt-get update
 sudo apt-get install apt-fast
 ```
 
-### Set up Livepatch (allows to do major kernel updates without forcing the user to restart the machine. Only for users with Ubuntu One account.)
-
-Under "Software & Updates", enable "Livepatch".
-
-### Set Default Applications
-
-Under "Settings", set the Default Applications.
-
-### Enable Location Services
-
-Under "Privacy", enable "Location Services".
-
-```bash
-gsettings set org.gnome.system.location enabled true
-```
-
-### Enable Enchanced Tilling
-
-Under "Ubuntu Desktop", enable "Enchanced Tilling".
-
-### Adjust Mouse and Touchpad settings
-
-Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
-
-```bash
-gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
-gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
-
-gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
-```
-
-### Show battery percentage
-
-```bash
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-```
-
-### Add my profile photo to the lock screen
-
-### Update Firmware via the Firware Updater app
-
-### Setup Cloud Accounts
-
-### Disable startup programs at Startup Application Preferences
-
-### Login to Ubuntu One account
-
-### Install GS Connect: For Android Phone Users
-
-### Install GNOME Sushi for Quick Look feature (macOS)
-
-## Programs to install
-
-- In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
-
-- For example, `sudo apt install package-name` installs the package version available in the Ubuntu repositories managed by APT (Advanced Package Tool). This version may be different from the version available as a snap package from the Snap Store, installable running the command `sudo snap install package-name`.
-
-- To manually fetch the latest versions of installed snaps from the Snap Store and update them: `sudo snap refresh`.
-
-### Git
-
-```bash
-sudo apt install git-all
-```
-
-### Microsoft Edge (for most recent version, visit: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>)
-
-```bash
-cd ~/Downloads
-
-wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_122.0.2365.92-1_amd64.deb
-
-sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
-```
-
-### Google Chrome
-
-```bash
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-sudo apt install ./google-chrome-stable_current_amd64.deb
-```
-
-### VS Code (or VSCodium)
-
-```bash
-sudo snap install code --classic
-```
-
-### Thonny
+### Thonny -- IDE for Python designed for beginners
 
 ```bash
 # Unofficial snap
@@ -263,19 +288,31 @@ However, for my use case, I installed version 4.0.1, .deb package from the Softw
 sudo usermod -a -G dialout <username>
 ```
 
-### VLC Player
+### SimpleScreenRecorder -- record programs and games
+
+```bash
+sudo apt install simplescreenrecorder
+```
+
+### Virtual Machine Manager -- managing virtual machines through libvirt
+
+```bash
+sudo apt install virt-manager
+```
+
+### VLC Player -- media player software and streaming media server
 
 ```bash
 sudo snap install vlc
 ```
 
-### GIMP?
+### GIMP -- cross-platform image editor
 
 ```bash
 sudo snap install gimp
 ```
 
-### FFmpeg
+### FFmpeg -- record, convert and stream audio and video
 
 ```bash
 sudo snap install ffmpeg
@@ -287,7 +324,7 @@ sudo snap install ffmpeg
 sudo apt install wine
 ```
 
-### QBittorrent
+### QBittorrent -- open-source BitTorrent client
 
 ```bash
 # Unofficial snap
@@ -298,47 +335,31 @@ sudo snap install qbittorrent-arnatious
 sudo apt install qbittorrent
 ```
 
-### SimpleScreenRecorder?
-
-```bash
-sudo apt install simplescreenrecorder
-```
-
-### Virtual Machine Manager
-
-```bash
-sudo apt install virt-manager
-```
-
-### Stacer
-
-```bash
-sudo apt install stacer
-```
-
 ### Obsidian
 
 ```bash
 sudo snap install obsidian --classic
 ```
 
-### Discord
+### Discord -- instant messaging and VoIP social platform
 
 ```bash
 sudo snap install discord
 ```
 
-### Diodon
+### Diodon -- clipboard manager
 
 ```bash
 sudo add-apt-repository ppa:diodon-team/stable
+
 sudo apt update
 ```
 
-### ufw - Uncomplicated Firewall
+### ufw -- uncomplicated firewall
 
 ```bash
 sudo snap install ufw
+
 sudo ufw status
 
 # If disabled, run this command
@@ -349,7 +370,11 @@ sudo ufw enable
 sudo ufw deny 22/tcp
 ```
 
-## Extras
+### GS Connect -- for Android Phone Users
+
+### GNOME Sushi -- for Quick Look feature (similar to macOS)
+
+## Tips and tricks
 
 ### In Anaconda
 
