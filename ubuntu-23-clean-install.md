@@ -1,5 +1,13 @@
 # Clean Install -- Ubuntu 23
 
+## 0. To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. (I also find it best to remove any other USB devices connected to the laptop.)
+
+Flashing a Linux image typically involves creating a bootable USB drive or SD card with the Linux distribution's installation files. Once the image is flashed onto the drive, it becomes formatted in a filesystem format that may not be natively supported by Windows or macOS.
+
+Windows typically uses NTFS or FAT32 filesystems, while macOS uses HFS+ or APFS. Linux distributions often use filesystems like ext4.
+
+Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/>
+
 ## 1. Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
@@ -346,6 +354,12 @@ sudo ufw enable
 # This app allows control over our ports.
 # Example: if I'm running an SSH server on port 22 and I want to disable this port to prevent connections from remote computers, I'd use this command
 sudo ufw deny 22/tcp
+```
+
+### Node.js -- JavaScript runtime built on Chrome's V8 JavaScript engine
+
+```bash
+sudo snap install node --classic
 ```
 
 ### GS Connect -- for Android Phone Users

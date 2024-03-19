@@ -90,4 +90,3 @@
    choco install gramps -y
    choco install thonny -y
    ```
-   
