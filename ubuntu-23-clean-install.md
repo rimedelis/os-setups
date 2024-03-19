@@ -15,13 +15,13 @@ sudo reboot now
 
 Using the Super Key + S shortcut, search for "Software & Updates".
 
-Under the "Ubuntu Software" tab, check all the options: "Main", "Universe", "Restricted" and "Multiverse" repositories.
+Under "Ubuntu Software", check all the options: "Main", "Universe", "Restricted" and "Multiverse" repositories.
 
-Under the "Other Software" tab, check the option "Canonical Partners".
+Under "Other Software", check the option "Canonical Partners".
 
 ### Install all missing/additional drivers
 
-Under the "Additional Drivers" Tab, follow the specific instructions provided on the screen.
+Under "Additional Drivers", follow the specific instructions provided on the screen.
 
 ### Install complete multimedia support
 
@@ -73,9 +73,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 ### Enable Night Light and Dark Style
 
-Under the "Screen Display" tab, set the "Night Light" to "Sunset to Sunrise".
+Under "Screen Display", set "Night Light" to "Sunset to Sunrise".
 
-Under the "Appearance" tab, enable "Dark Style".
+Under "Appearance", enable "Dark Style".
 
 ### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
 
@@ -85,11 +85,11 @@ sudo apt install gnome-weather
 
 ### Disable Startup Applications from the gnome app list
 
-In the Startup Application Preferences, you can disable, add or remove the programs.
+Under "Startup Application Preferences", disable or remove the programs.
 
 ### Opt out of data collection in Ubuntu (optional)
 
-Under the "Privacy" tab, set "Problem Reporting" to "Manual", or you can set it to "Never".
+Under "Privacy", set "Problem Reporting" to "Manual" or to "Never".
 
 ### Disable Bluetooth at startup (preferred)
 
@@ -159,19 +159,17 @@ sudo apt-get update
 sudo apt-get install apt-fast
 ```
 
-### Set up Livepatch
+### Set up Livepatch (allows to do major kernel updates without forcing the user to restart the machine. Only for users with Ubuntu One account.)
 
-Allows to do major kernel updates without forcing the user to restart the machine. Only for users with Ubuntu One account.
-
-Software & Updates > Livepatch
+Under "Software & Updates", enable "Livepatch".
 
 ### Set Default Applications
 
-Settings > Default Applications
+Under "Settings", set the Default Applications.
 
 ### Enable Location Services
 
-Settings > Privacy > Location Services
+Under "Privacy", enable "Location Services".
 
 ```bash
 gsettings set org.gnome.system.location enabled true
@@ -179,11 +177,11 @@ gsettings set org.gnome.system.location enabled true
 
 ### Enable Enchanced Tilling
 
-Settings > Ubuntu Desktop > Enchanced Tilling
+Under "Ubuntu Desktop", enable "Enchanced Tilling".
 
 ### Adjust Mouse and Touchpad settings
 
-Settings > Mouse & Touchpad -- increase Pointer Speed and enable Tap to Click
+Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
