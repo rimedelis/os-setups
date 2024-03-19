@@ -2,7 +2,7 @@
 
 ## Essential Steps
 
-### Check for Updates (apt stands for Aptitude. They say `apt` doesn't need to be preceeded by sudo as it automatically performs operations with superuser privileges when necessary.)
+### Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -13,15 +13,15 @@ sudo reboot now
 
 ### Enable additional repositories for more software
 
-Search for Software & Updates.
+Using the Super Key + S shortcut, search for "Software & Updates".
 
-Under the Ubuntu Software tab, make sure you have checked all the options: Main, Universe, Restricted and Multiverse repositories.
+Under the "Ubuntu Software" tab, check all the options: "Main", "Universe", "Restricted" and "Multiverse" repositories.
 
-Move to the Other Software tab, check the option of Canonical Partners.
+Under the "Other Software" tab, check the option "Canonical Partners".
 
 ### Install all missing/additional drivers
 
-Click on "Additional Drivers" Tab and follow the specific instructions provided on the screen.
+Under the "Additional Drivers" Tab, follow the specific instructions provided on the screen.
 
 ### Install complete multimedia support
 
@@ -73,9 +73,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 ### Enable Night Light and Dark Style
 
-Settings > Screen Display > Night Light -- set to "Sunset to Sunrise"
+Under the "Screen Display" tab, set the "Night Light" to "Sunset to Sunrise".
 
-Settings > Appearance > Dark Style
+Under the "Appearance" tab, enable "Dark Style".
 
 ### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
 
@@ -89,7 +89,7 @@ In the Startup Application Preferences, you can disable, add or remove the progr
 
 ### Opt out of data collection in Ubuntu (optional)
 
-System Settings > Privacy and then set the Problem Reporting to Manual or you can set it to Never.
+Under the "Privacy" tab, set "Problem Reporting" to "Manual", or you can set it to "Never".
 
 ### Disable Bluetooth at startup (preferred)
 
@@ -328,6 +328,13 @@ sudo snap install obsidian --classic
 
 ```bash
 sudo snap install discord
+```
+
+### Diodon
+
+```bash
+sudo add-apt-repository ppa:diodon-team/stable
+sudo apt update
 ```
 
 ### ufw - Uncomplicated Firewall
