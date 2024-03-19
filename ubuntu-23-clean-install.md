@@ -1,20 +1,14 @@
 # Clean Install -- Ubuntu 23
 
-## Essential Steps
-
-### 1. Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
+## 1. Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
----
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
-**Restart the computer for changes to apply: `sudo reboot now`**
-
----
-
-### 2. Enable additional repositories for more software
+## 2. Enable additional repositories for more software
 
 Using the Super Key to open the Activities overview and search for "Software & Updates".
 
@@ -22,19 +16,15 @@ Under "Ubuntu Software", check all the options: "Main", "Universe", "Restricted"
 
 Under "Other Software", check the option "Canonical Partners".
 
-### 3. Install all missing/additional drivers
+## 3. Install all missing/additional drivers
 
 Under "Additional Drivers", follow the specific instructions provided on the screen.
 
-### Update Firmware via the Firware Updater app
+## 4. Update Firmware via the Firware Updater app
 
----
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
-**Restart the computer for changes to apply: `sudo reboot now`**
-
----
-
-### Change Dock settings
+## 5. Change Dock settings
 
 ```bash
 # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
@@ -59,7 +49,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 ```
 
-### Adjust Mouse and Touchpad settings
+## 6. Change Mouse and Touchpad settings
 
 Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
 
@@ -70,7 +60,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
-### Show battery percentage
+## 7. Show battery percentage
 
 Under "Battery", enable "Show battery percentage".
 
@@ -78,19 +68,19 @@ Under "Battery", enable "Show battery percentage".
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 ```
 
-### Enable Num Lock at startup
+## 8. Enable Num Lock at startup
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 ```
 
-### Always show Hidden Files
+## 9. Show Hidden Files
 
 ```bash
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
-### Enable Location Services
+## 10. Enable Location Services
 
 Under "Privacy", enable "Location Services".
 
@@ -98,33 +88,29 @@ Under "Privacy", enable "Location Services".
 gsettings set org.gnome.system.location enabled true
 ```
 
-### Disable Bluetooth at startup
+## 11. Disable Bluetooth at startup
 
 ```bash
 sudo systemctl disable bluetooth.service
 ```
 
-### Enable Night Light and Dark Style
+## 12. Enable Night Light and Dark Style
 
 Under "Screen Display", set "Night Light" to "Sunset to Sunrise".
 
 Under "Appearance", enable "Dark Style".
 
-### Enable Enchanced Tilling
+## 13. Enable Enchanced Tilling
 
 Under "Ubuntu Desktop", enable "Enchanced Tilling".
 
-### Opt out of data collection in Ubuntu
+## 14. Opt out of data collection in Ubuntu
 
 Under "Privacy", set "Problem Reporting" to "Manual" or to "Never".
 
----
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
-**Restart the computer for changes to apply: `sudo reboot now`**
-
----
-
-## Packages to install
+## 15. Packages to install
 
 - In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
 
@@ -182,13 +168,9 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 sudo snap install code --classic
 ```
 
----
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
-**Restart the computer for changes to apply: `sudo reboot now`**
-
----
-
-### Clean up afterwards
+## 16. Clean up afterwards
 
 ```bash
 # To remove the packages that failed to install completely,
@@ -201,33 +183,29 @@ sudo apt-get clean
 sudo apt-get autoremove
 ```
 
-### Set Default Applications
+## 17. Change Default Applications
 
 Under "Settings", set the Default Applications.
 
-### Disable Startup Applications
+## 18. Disable Startup Applications
 
 Under "Startup Application Preferences", disable or remove the programs.
 
-### Login to Ubuntu One account
+## 19. Login to Ubuntu One account
 
-### Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs)
+## 20. Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs)
 
 Under "Software & Updates", enable "Livepatch".
 
-### Change login screen photo
+## 21. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-### Setup Online Accounts
+## 22. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
----
-
-**Restart the computer for changes to apply: `sudo reboot now`**
-
----
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
 ## Optional packages and extras
 
