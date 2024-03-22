@@ -30,7 +30,7 @@ Under "Other Software", check the option "Canonical Partners".
 
 Under "Additional Drivers", follow the specific instructions provided on the screen.
 
-## 4. Update Firmware via the Firware Updater app
+## 4. Update Firmware via the Firmware Updater app
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
@@ -203,15 +203,11 @@ Under "Startup Application Preferences", disable or remove the programs.
 
 ## 19. Login to Ubuntu One account
 
-## 20. Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs)
-
-Under "Software & Updates", enable "Livepatch".
-
-## 21. Change login screen photo
+## 20. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-## 22. Add Online Accounts
+## 21. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
@@ -238,6 +234,12 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 ```bash
 sudo apt install gnome-weather
 ```
+
+### Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs. Livepatch is included in Ubuntu Pro)
+
+Under "Software & Updates", enable "Livepatch".
+
+Check [How to enable the Livepatch client](https://ubuntu.com/security/livepatch/docs/livepatch/how-to/enable).
 
 ### Stacer -- system optimizer and application monitor
 
