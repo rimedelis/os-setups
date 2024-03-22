@@ -366,6 +366,10 @@ sudo ufw deny 22/tcp
 sudo snap install node --classic
 ```
 
+### GitHub CLI + Copilot
+
+[Using GitHub Copilot in the CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli)
+
 ### GS Connect -- for Android Phone Users
 
 ### GNOME Sushi -- for Quick Look feature (similar to macOS)
