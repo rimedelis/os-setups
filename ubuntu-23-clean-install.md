@@ -290,6 +290,8 @@ sudo apt install simplescreenrecorder
 sudo apt install virt-manager
 ```
 
+#### AutoCAD inside a Windows VM
+
 ### VLC Player -- media player software and streaming media server
 
 ```bash
