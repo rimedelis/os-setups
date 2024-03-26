@@ -50,7 +50,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 ## 5. Change Mouse and Touchpad settings
 
-Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
+Under "Mouse & Touchpad", increase "Pointer Speed" and check if "Tap to Click" is enabled.
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
