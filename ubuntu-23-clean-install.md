@@ -188,7 +188,13 @@ sudo snap install code --classic
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
-## 15. Clean up afterwards
+## 15. Packages to uninstall
+
+Open "App Center" and uninstall:
+
+- Firefox
+
+## 16. Clean up afterwards
 
 ```bash
 # To remove the packages that failed to install completely,
@@ -201,21 +207,21 @@ sudo apt-get clean
 sudo apt-get autoremove
 ```
 
-## 16. Change Default Applications
+## 17. Change Default Applications
 
 Under "Settings", set the Default Applications.
 
-## 17. Disable Startup Applications
+## 18. Disable Startup Applications
 
 Under "Startup Application Preferences", disable or remove the programs.
 
-## 18. Login to Ubuntu One account
+## 19. Login to Ubuntu One account
 
-## 19. Change login screen photo
+## 20. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-## 20. Add Online Accounts
+## 21. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
