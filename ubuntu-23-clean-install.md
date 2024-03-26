@@ -46,6 +46,12 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 
 # Auto-hide the Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
+
+# Hide "Trash" icon
+gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
+
+# Hide "Volumes and Devices" icons
+gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
 ## 5. Change Mouse and Touchpad settings
