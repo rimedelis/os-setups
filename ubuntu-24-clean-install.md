@@ -10,7 +10,7 @@ Windows typically uses NTFS or FAT32 filesystems, while macOS uses HFS+ or APFS.
 
 Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/>
 
-## Tip: execute ubuntu-1.sh to automate steps 1 to 8
+## Tip: execute [ubuntu-1.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-1.sh) to automate steps 1 to 8.
 
 ## 1. Check for updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
@@ -123,7 +123,7 @@ Use the Super Key to open the Activities overview and search for "Software & Upd
 
 ## 12. Update firmware via the Firmware Updater app
 
-## Tip: execute ubuntu-2.sh to automate steps 13 to 15
+## Tip: execute [ubuntu-2.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-2.sh) to automate steps 13 to 15
 
 ## 13. Packages to install
 
