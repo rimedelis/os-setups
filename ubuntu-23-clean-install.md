@@ -20,13 +20,13 @@ sudo apt update && sudo apt upgrade
 
 ## 2. Enable additional repositories for more software
 
-Using the Super Key to open the Activities overview and search for "Software & Updates".
+Use the Super Key to open the Activities overview and search for "Software & Updates":
 
-Under "Ubuntu Software", check if enabled: "Main", "Universe", "Restricted" and "Multiverse" repositories.
+- Under "Ubuntu Software", check if enabled: "Main", "Universe", "Restricted" and "Multiverse" repositories.
 
-Under "Updates", set "When there are other updates" to "Display immediately".
+- Under "Updates", set "When there are other updates" to "Display immediately".
 
-Under "Additional Drivers", check if updates are available.
+- Under "Additional Drivers", check if updates are available.
 
 ## 3. Update Firmware via the Firmware Updater app
 
