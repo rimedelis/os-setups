@@ -22,19 +22,17 @@ sudo apt update && sudo apt upgrade
 
 Using the Super Key to open the Activities overview and search for "Software & Updates".
 
-Under "Ubuntu Software", check all the options: "Main", "Universe", "Restricted" and "Multiverse" repositories.
+Under "Ubuntu Software", check if enabled: "Main", "Universe", "Restricted" and "Multiverse" repositories.
 
-Under "Other Software", check the option "Canonical Partners".
+Under "Updates", set "When there are other updates" to "Display immediately".
 
-## 3. Install all missing/additional drivers
+Under "Additional Drivers", check if updates are available.
 
-Under "Additional Drivers", follow the specific instructions provided on the screen.
-
-## 4. Update Firmware via the Firmware Updater app
+## 3. Update Firmware via the Firmware Updater app
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
-## 5. Change Dock settings
+## 4. Change Dock settings
 
 ```bash
 # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
@@ -46,51 +44,50 @@ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 # Dock on the bottom of the screen
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 
-# Dock without transparency effects
-gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
-
-# Dock icons' size set to 64
-gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
-
-# Dock icons become backlit
-gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
-
 # Auto-hide the Dock
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 ```
 
-## 6. Change Mouse and Touchpad settings
+## 5. Change Mouse and Touchpad settings
 
 Under "Mouse & Touchpad", increase "Pointer Speed" and enable "Tap to Click".
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
-gsettings set org.gnome.desktop.peripherals.touchpad speed 1.0
+gsettings set org.gnome.desktop.peripherals.touchpad speed 0.75
 
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
-## 7. Show battery percentage
+## 6. Change Power settings
 
-Under "Battery", enable "Show battery percentage".
+Under "Power", enable "Show battery percentage", disable "Automatic Suspend" and set "Power Button Behavior" to "Suspend".
 
 ```bash
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 ```
 
-## 8. Enable Num Lock at startup
+```bash
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
+```
+
+```bash
+org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
+```
+
+## 7. Enable Num Lock at startup
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 ```
 
-## 9. Show Hidden Files
+## 8. Show Hidden Files
 
 ```bash
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
-## 10. Enable Location Services
+## 9. Enable Location Services
 
 Under "Privacy", enable "Location Services".
 
@@ -98,29 +95,37 @@ Under "Privacy", enable "Location Services".
 gsettings set org.gnome.system.location enabled true
 ```
 
-## 11. Disable Bluetooth at startup
+## 10. Disable Bluetooth at startup
 
 ```bash
 sudo systemctl disable bluetooth.service
 ```
 
-## 12. Enable Night Light and Dark Style
+## 11. Enable Night Light and Dark Style
 
-Under "Screen Display", set "Night Light" to "Sunset to Sunrise".
+Under "Screen Display", enable "Night Light" and set it to "Sunset to Sunrise".
 
-Under "Appearance", enable "Dark Style".
+```bash
+gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true
+```
 
-## 13. Enable Enchanced Tilling
+Under "Appearance", check if "Dark Style" is enabled.
 
-Under "Ubuntu Desktop", enable "Enchanced Tilling".
+```bash
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+```
 
-## 14. Opt out of data collection in Ubuntu
+## 12. Enable Enchanced Tilling
 
-Under "Privacy", set "Problem Reporting" to "Manual" or to "Never".
+Under "Ubuntu Desktop", check if "Enchanced Tilling" is enabled.
+
+## 13. Opt out of data collection in Ubuntu
+
+Under "Privacy", go to "Diagnostics" and set "Problem Reporting" to "Never".
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
-## 15. Packages to install
+## 14. Packages to install
 
 - In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
 
@@ -142,10 +147,15 @@ sudo apt-get install tlp
 # Once installed, run this command
 sudo tlp start
 
-# To check the status of TLP and see its applied settings
-sudo tlp-stat
-
 # To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
+```
+
+### Google Chrome -- web browser
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
 ### Git -- distributed version control system
@@ -164,15 +174,7 @@ wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable
 sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 ```
 
-### Google Chrome -- web browser
-
-```bash
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
-sudo apt install ./google-chrome-stable_current_amd64.deb
-```
-
-### VS Code (or VSCodium) -- source-code editor
+### Visual Studio Code (or VSCodium) -- source-code editor
 
 ```bash
 sudo snap install code --classic
@@ -180,7 +182,7 @@ sudo snap install code --classic
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
-## 16. Clean up afterwards
+## 15. Clean up afterwards
 
 ```bash
 # To remove the packages that failed to install completely,
@@ -193,21 +195,21 @@ sudo apt-get clean
 sudo apt-get autoremove
 ```
 
-## 17. Change Default Applications
+## 16. Change Default Applications
 
 Under "Settings", set the Default Applications.
 
-## 18. Disable Startup Applications
+## 17. Disable Startup Applications
 
 Under "Startup Application Preferences", disable or remove the programs.
 
-## 19. Login to Ubuntu One account
+## 18. Login to Ubuntu One account
 
-## 20. Change login screen photo
+## 19. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-## 21. Add Online Accounts
+## 20. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
@@ -327,7 +329,7 @@ sudo snap install qbittorrent-arnatious
 sudo apt install qbittorrent
 ```
 
-### Obsidian
+### Obsidian -- personal knowledge base and note-taking software application
 
 ```bash
 sudo snap install obsidian --classic
