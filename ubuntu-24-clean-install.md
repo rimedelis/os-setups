@@ -1,4 +1,4 @@
-# Clean Install -- Ubuntu 23
+# Clean Install -- Ubuntu 24
 
 ## 0. If the PC is running Windows, go to `Control Panel\Hardware and Sound\Power Options\System Settings`, and under "Shutdown settings", uncheck "Turn on fast startup (recommended)" in order to disable fast startup. It's also mandatory to disable "Secure Boot" and recommended to disable "Fast Boot" in BIOS.
 
@@ -10,29 +10,15 @@ Windows typically uses NTFS or FAT32 filesystems, while macOS uses HFS+ or APFS.
 
 Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/>
 
-## 1. Check for Updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
+## Tip: execute ubuntu-1.sh to automate steps 1 to 8
+
+## 1. Check for updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
-
-## 2. Enable additional repositories for more software
-
-Use the Super Key to open the Activities overview and search for "Software & Updates":
-
-- Under "Ubuntu Software", check if enabled: "Main", "Universe", "Restricted" and "Multiverse" repositories.
-
-- Under "Updates", set "When there are other updates" to "Display immediately".
-
-- Under "Additional Drivers", check if updates are available.
-
-## 3. Update Firmware via the Firmware Updater app
-
-## **Restart the computer for changes to apply: `sudo reboot now`**
-
-## 4. Change Dock settings
+## 2. Change Dock settings
 
 ```bash
 # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
@@ -54,7 +40,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 ```
 
-## 5. Change Mouse and Touchpad settings
+## 3. Change Mouse and Touchpad settings
 
 Under "Mouse & Touchpad", increase "Pointer Speed" and check if "Tap to Click" is enabled.
 
@@ -65,7 +51,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad speed 0.75
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
-## 6. Change Power settings
+## 4. Change Power settings
 
 Under "Power", enable "Show battery percentage", disable "Automatic Suspend" and set "Power Button Behavior" to "Suspend".
 
@@ -81,19 +67,19 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
 ```
 
-## 7. Enable Num Lock at startup
+## 5. Enable Num Lock at startup
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 ```
 
-## 8. Show Hidden Files
+## 6. Show Hidden Files
 
 ```bash
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
-## 9. Enable Location Services
+## 7. Enable Location Services
 
 Under "Privacy", enable "Location Services".
 
@@ -101,13 +87,7 @@ Under "Privacy", enable "Location Services".
 gsettings set org.gnome.system.location enabled true
 ```
 
-## 10. Disable Bluetooth at startup
-
-```bash
-sudo systemctl disable bluetooth.service
-```
-
-## 11. Enable Night Light and Dark Style
+## 8. Enable Night Light and Dark Style
 
 Under "Screen Display", enable "Night Light" and set it to "Sunset to Sunrise".
 
@@ -121,17 +101,31 @@ Under "Appearance", check if "Dark Style" is enabled.
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
 
-## 12. Enable Enchanced Tilling
+## **Restart the computer for changes to apply: `sudo reboot now`**
 
-Under "Ubuntu Desktop", check if "Enchanced Tilling" is enabled.
+## 9. Enable Enhanced Tilling
 
-## 13. Opt out of data collection in Ubuntu
+Under "Ubuntu Desktop", check if "Enhanced Tilling" is enabled.
+
+## 10. Opt out of data collection
 
 Under "Privacy", go to "Diagnostics" and set "Problem Reporting" to "Never".
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
+## 11. Change Software & Updates settings
 
-## 14. Packages to install
+Use the Super Key to open the Activities overview and search for "Software & Updates":
+
+- Under "Ubuntu Software", check if enabled: "Main", "Universe", "Restricted" and "Multiverse" repositories.
+
+- Under "Updates", set "When there are other updates" to "Display immediately".
+
+- Under "Additional Drivers", check if updates are available.
+
+## 12. Update firmware via the Firmware Updater app
+
+## Tip: execute ubuntu-2.sh to automate steps 13 to 15
+
+## 13. Packages to install
 
 - In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
 
@@ -186,42 +180,45 @@ sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 sudo snap install code --classic
 ```
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
-
-## 15. Packages to uninstall
+## 14. Packages to uninstall
 
 Open "App Center" and uninstall:
 
-- Firefox
+```bash
+# Firefox
+sudo snap remove firefox
+```
 
-## 16. Clean up afterwards
+## 15. Clean up afterwards
 
 ```bash
 # To remove the packages that failed to install completely,
-sudo apt-get autoclean
+sudo apt autoclean
 
 # Additionally, to remove the apt-cache,
-sudo apt-get clean
+sudo apt clean
 
 # Finally, to remove the unwanted software dependencies,
-sudo apt-get autoremove
+sudo apt autoremove
 ```
 
-## 17. Change Default Applications
+## **Restart the computer for changes to apply: `sudo reboot now`**
+
+## 16. Change Default Applications
 
 Under "Settings", set the Default Applications.
 
-## 18. Disable Startup Applications
+## 17. Disable Startup Applications
 
 Under "Startup Application Preferences", disable or remove the programs.
 
-## 19. Login to Ubuntu One account
+## 18. Login to Ubuntu One account
 
-## 20. Change login screen photo
+## 19. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-## 21. Add Online Accounts
+## 20. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
