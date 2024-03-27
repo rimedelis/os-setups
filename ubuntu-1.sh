@@ -3,13 +3,14 @@
 # Step 1: Check for Updates
 sudo apt update && sudo apt upgrade
 
-# Step 2: Change Dock settings
+# Step 2: Change Dock and Desktop settings
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
 gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+gsettings set org.gnome.shell.extensions.ding show-home false
 
 # Step 3: Change Mouse and Touchpad settings
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
