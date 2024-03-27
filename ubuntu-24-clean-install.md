@@ -165,6 +165,10 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 
 ```bash
 sudo apt install git-all
+
+# Username and email address must be configured before Git can be used
+git config --global user.name "rimedelis"
+git config --global user.email email@example.com
 ```
 
 ### Microsoft Edge (for most recent version, visit this page and then edit the link in the command below: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>) -- web browser
