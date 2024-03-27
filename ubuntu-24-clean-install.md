@@ -214,13 +214,15 @@ Under "Startup Application Preferences", disable or remove the programs.
 
 ## 18. Login to Ubuntu One account
 
-## 19. Change login screen photo
+<https://login.staging.ubuntu.com/>
 
-Under "Users", edit the login screen photo.
-
-## 20. Add Online Accounts
+## 19. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
+
+## 20. Change login screen photo
+
+Under "Users", edit the login screen photo.
 
 ## **Restart the computer for changes to apply: `sudo reboot now`**
 
