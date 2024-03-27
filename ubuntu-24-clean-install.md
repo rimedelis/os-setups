@@ -18,7 +18,7 @@ Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/
 sudo apt update && sudo apt upgrade
 ```
 
-## 2. Change Dock settings
+## 2. Change Dock and Desktop settings
 
 ```bash
 # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
@@ -38,6 +38,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 
 # Hide "Volumes and Devices" icons
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+
+# Hide "Home" folder icon on desktop
+gsettings set org.gnome.shell.extensions.ding show-home false
 ```
 
 ## 3. Change Mouse and Touchpad settings
@@ -64,7 +67,7 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 ```
 
 ```bash
-org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
+gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
 ```
 
 ## 5. Enable Num Lock at startup
