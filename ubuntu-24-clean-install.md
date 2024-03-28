@@ -78,7 +78,10 @@ gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 
 ## 6. Show Hidden Files
 
+Go to "Files" and under "Main Menu", enable "Show Hidden Files" (or press Ctrl+H).
+
 ```bash
+# This command is obsolete.
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
