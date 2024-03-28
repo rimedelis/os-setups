@@ -83,7 +83,7 @@ choco install gramps -y
 choco install thonny -y
 choco install mingw -y
 choco install microsoft-windows-terminal -y
-choco install msys2 -y
+choco install msys2 -y # important for Ruby gem installations to work correctly
 choco install anaconda3 -y
 choco install python -y
 choco install ruby -y
