@@ -107,7 +107,7 @@ Under "Appearance", check if "Dark Style" is enabled.
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
+## Restart the computer for changes to apply: `sudo reboot now`
 
 ## 9. Enable Enhanced Tilling
 
@@ -212,7 +212,7 @@ sudo apt clean
 sudo apt autoremove
 ```
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
+## Restart the computer for changes to apply: `sudo reboot now`
 
 ## 16. Change Default Applications
 
@@ -234,7 +234,7 @@ Under "Online Accounts", select an account from the list.
 
 Under "Users", edit the login screen photo.
 
-## **Restart the computer for changes to apply: `sudo reboot now`**
+## Restart the computer for changes to apply: `sudo reboot now`
 
 ## Optional packages and extras
 

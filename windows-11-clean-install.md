@@ -1,60 +1,80 @@
 # Clean Install -- Windows 11
 
-## Essential Steps
+If the PC is running Windows, there's not much prework to be done except disabling "Secure Boot" in BIOS
 
-1. Check for regular and additional updates
+To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. I also find it best to remove any other USB devices connected to the laptop.
 
-2. Disable/uninstall bloatware and startup apps
+Include hard drive drivers in a folder inside the bootable USB containing the Windows ISO in order to be able to proceed with the installation successfully. Because those drivers seem to be absent after I format the disks during the clean installation process, and thus they need to be fetched manually.
 
-3. Setup PIN
+---
 
-4. Go to Clean recommendations to delete trash files
+You can go through this list and change things manually or start off using [Wintoys](https://apps.microsoft.com/detail/9p8ltpgcbzxd?hl=en-US&gl=US) which makes the process a bit quicker.
 
-5. Disable all notifications
+## Check for Windows regular and optional updates, as well as updates for apps from Microsoft Store
 
-6. Disable all taskbar icons
+## ! Restart the computer for changes to apply !
 
-7. Set Power to Best Performance while plugged in and Battery Saver otherwise
+## Setup PIN
 
-8. Change default browser and any other default apps
+## Change computer name
 
-9. Update drivers using Windows Update and Device Manager
+## Check for Cleanup recommendations
 
-10. Change privacy settings: General and Diagnostics
+## Disable all notifications
 
-11. Disable a few services built into Windows: telemetry, print spooler, or geolocation
+## Disable taskbar and Start menu icons
 
-12. Enable Clipboard history
+## Check for driver updates via the Device Manager
 
-13. Show hidden files: Don't hide empty drives or extensions for known file types.
+## Change privacy settings: General and Diagnostics
 
-14. Set User Account Control (UAC) settings to Never Notify.
+## Disable Windows services: telemetry, print spooler, or geolocation
 
-15. Set Dark Mode
+## Enable Clipboard history
 
-16. (Optional) Install Wintoys tool by Bogdan P.
+## Enable "Show hidden files" and "Display file extension"
 
-17. Windows God Mode: Create a folder called "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}" that gives us all hidden Windows settings
+## Set User Account Control (UAC) to "Never Notify"
 
-## Programs to install
+## Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
+
+## Enable "Dark Mode"
+
+## ! Restart the computer for changes to apply !
+
+## Uninstall unnecessary pre-installed apps
+
+## Disable unnecessary startup apps
+
+## "Turn Windows features off"
+
+## ! Restart the computer for changes to apply !
+
+## Install apps
 
 - Google Chrome
+
 - VS Code
+
 - Git
+
 - Node.js
+
 - qBittorrent
 
-## Installing with Chocolatey
+## Change default apps
+
+### Installing with Chocolatey
 
 Tip: execute `windows-chocolatey.sh` to automate the following steps.
 
-1. First, install Chocolatey:
+#### First, install Chocolatey
 
 ```powershell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
-2. Use this to never be asked for permission to run (always Yes to prompts):
+#### Use this to never be asked for permission to run (always Yes to prompts)
 
 ```powershell
 choco feature enable -n=allowGlobalConfirmation
@@ -63,7 +83,7 @@ choco feature enable -n=allowGlobalConfirmation
 choco feature disable -n=allowGlobalConfirmation
 ```
 
-3. Programs to install:
+#### Apps to install
 
 ```powershell
 choco install git -y
@@ -73,7 +93,7 @@ choco install qbittorrent -y
 choco install vscode -y
 ```
 
-4. Other programs I've installed with Chocolatey:
+#### Other apps I've installed with Chocolatey
 
 ```powershell
 choco install sonicpi -y
@@ -89,3 +109,11 @@ choco install python -y
 choco install ruby -y
 choco install wsl2 --params "/Version:2 /Retry:true" -y
 ```
+
+## ! Restart the computer for changes to apply !
+
+## Empty Recycle Bin and Shadow copies, and defrag the disk
+
+## Extra tips
+
+- Windows God Mode: Create a folder called "GodMode.{ED7BA470-8E54-465E-825C-99712043E01C}" that gives us all hidden Windows settings
