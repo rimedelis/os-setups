@@ -18,8 +18,6 @@ You can go through this list and change things manually or start off using [Wint
 
 ## Change computer name
 
-## Check for Cleanup recommendations
-
 ## Disable all notifications
 
 ## Disable taskbar and Start menu icons
@@ -35,6 +33,8 @@ You can go through this list and change things manually or start off using [Wint
 ## Enable "Show hidden files" and "Display file extension"
 
 ## Set User Account Control (UAC) to "Never Notify"
+
+## Change mouse pointer speed
 
 ## Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
 
@@ -114,7 +114,11 @@ choco install wsl2 --params "/Version:2 /Retry:true" -y
 
 ## ! Restart the computer for changes to apply !
 
-## Empty Recycle Bin and Shadow copies, and defrag the disk
+## Empty Recycle Bin and Shadow copies
+
+## Check for Cleanup recommendations
+
+## Defragment the disk
 
 ## Extra tips
 
