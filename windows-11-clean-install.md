@@ -38,6 +38,8 @@ You can go through this list and change things manually or start off using [Wint
 
 ## Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
 
+## Disable hibernate
+
 ## Enable "Dark Mode"
 
 ## ! Restart the computer for changes to apply !
@@ -46,7 +48,7 @@ You can go through this list and change things manually or start off using [Wint
 
 ## Disable unnecessary startup apps
 
-## "Turn Windows features off"
+## Turn Windows features off: Internet Explorer 11, Windows Media Player
 
 ## ! Restart the computer for changes to apply !
 
