@@ -26,6 +26,7 @@ gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspe
 gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 
 # Step 6: Show Hidden Files
+# This command is obsolete.
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 
 # Step 7: Enable Location Services
