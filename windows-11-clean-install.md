@@ -8,49 +8,47 @@ Include hard drive drivers in a folder inside the bootable USB containing the Wi
 
 ---
 
-You can go through this list and change things manually or start off using [Wintoys](https://apps.microsoft.com/detail/9p8ltpgcbzxd?hl=en-US&gl=US) which makes the process a bit quicker.
+You can go through the following list and change things manually or start off using [Wintoys](https://apps.microsoft.com/detail/9p8ltpgcbzxd?hl=en-US&gl=US) which makes the process a bit quicker.
 
-## Check for Windows regular and optional updates, as well as updates for apps from Microsoft Store
+---
 
-## ! Restart the computer for changes to apply !
+- Check for Windows regular and optional updates, and Microsoft Store updates
 
-## Setup PIN
+### Restart the PC
 
-## Change computer name
+- Setup PIN
 
-## Disable all notifications
+- Change PC name
 
-## Disable taskbar and Start menu icons
+- Disable Taskbar and Start menu icons
 
-## Check for driver updates via the Device Manager
+- Change privacy settings: General and Diagnostics
 
-## Change privacy settings: General and Diagnostics
+- Enable Clipboard history
 
-## Disable Windows services: telemetry, print spooler, or geolocation
+- Enable "Show hidden files" and "Display file extension"
 
-## Enable Clipboard history
+- Set UAC settings to "Never Notify"
 
-## Enable "Show hidden files" and "Display file extension"
+- Change mouse pointer speed
 
-## Set User Account Control (UAC) to "Never Notify"
+- Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
 
-## Change mouse pointer speed
+- Disable "Hibernate" and enable "Fast Startup"
 
-## Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
+- Enable "Dark" mode
 
-## Disable hibernate
+- Setup "Multiple displays" and enable "HDR"
 
-## Enable "Dark Mode"
+- Change "Sound settings" to improve input/output quality
 
-## ! Restart the computer for changes to apply !
+### Restart the PC
 
-## Uninstall unnecessary pre-installed apps
+- Uninstall bloatware and unnecessary pre-installed apps
 
-## Disable unnecessary startup apps
+- Disable unnecessary "Startup Apps"
 
-## Turn Windows features off: Internet Explorer 11, Windows Media Player
-
-## ! Restart the computer for changes to apply !
+### Restart the PC
 
 ## Install apps
 
@@ -63,8 +61,6 @@ You can go through this list and change things manually or start off using [Wint
 - Node.js
 
 - qBittorrent
-
-## Change default apps
 
 ### Installing with Chocolatey
 
@@ -112,13 +108,13 @@ choco install ruby -y
 choco install wsl2 --params "/Version:2 /Retry:true" -y
 ```
 
-## ! Restart the computer for changes to apply !
+### Restart the PC
 
-## Empty Recycle Bin and Shadow copies
+- Change "Default apps"
 
-## Check for Cleanup recommendations
+- Check "Disk Cleanup" and "Disk cleanup recommendations"
 
-## Defragment the disk
+- Check "Defragment and Optimize Drives"
 
 ## Extra tips
 
