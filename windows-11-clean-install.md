@@ -42,6 +42,8 @@ You can go through the following list and change things manually or start off us
 
 - Change "Sound settings" to improve input/output quality
 
+- Set File Explorer Options to "Single-click to open an item"
+
 ### Restart the PC
 
 - Uninstall bloatware and unnecessary pre-installed apps
