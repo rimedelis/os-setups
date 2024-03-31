@@ -433,3 +433,7 @@ sudo apt install synaptic
 
 # The rest is done via the app's GUI.
 ```
+
+## Uninstalling Ubuntu
+
+To uninstall Ubuntu and delete dual boot in Windows: <https://www.youtube.com/watch?v=mQyxtWrUNlE>
