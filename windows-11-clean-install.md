@@ -91,6 +91,7 @@ choco install googlechrome -y
 choco install nodejs.install -y
 choco install qbittorrent -y
 choco install vscode -y
+choco install bruno -y
 ```
 
 #### Other apps I've installed with Chocolatey
