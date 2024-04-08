@@ -64,6 +64,14 @@ You can go through the following list and change things manually or start off us
 
 - qBittorrent
 
+- Bruno
+
+- Docker
+
+- Microsoft Windows Terminal
+
+- WSL 2
+
 ### Installing with Chocolatey
 
 Tip: execute `windows-chocolatey.sh` to automate the following steps.
@@ -92,6 +100,9 @@ choco install nodejs.install -y
 choco install qbittorrent -y
 choco install vscode -y
 choco install bruno -y
+choco install docker -y
+choco install microsoft-windows-terminal -y
+choco install wsl2 --params "/Version:2 /Retry:true" -y
 ```
 
 #### Other apps I've installed with Chocolatey
@@ -103,12 +114,10 @@ choco install ngrok -y
 choco install gramps -y
 choco install thonny -y
 choco install mingw -y
-choco install microsoft-windows-terminal -y
 choco install msys2 -y # important for Ruby gem installations to work correctly
 choco install anaconda3 -y
 choco install python -y
 choco install ruby -y
-choco install wsl2 --params "/Version:2 /Retry:true" -y
 ```
 
 ### Restart the PC
