@@ -68,7 +68,7 @@ You can go through the following list and change things manually or start off us
 
 - Docker
 
-- Microsoft Windows Terminal
+- Windows Terminal
 
 - WSL 2
 
