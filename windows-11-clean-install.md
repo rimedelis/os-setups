@@ -26,11 +26,11 @@ You can go through the following list and change things manually or start off us
 
 - Enable Clipboard history
 
-- Enable "Show hidden files" and "Display file extension"
+- Enable "Show hidden files" and disable "Hide extensions for known file types" and "Hide empty drives"
 
 - Set UAC settings to "Never Notify"
 
-- Change mouse pointer speed
+- Change mouse and touchpad pointer speed
 
 - Set Power to "Best Performance" while plugged in and "Battery Saver" otherwise
 
@@ -38,11 +38,9 @@ You can go through the following list and change things manually or start off us
 
 - Enable "Dark" mode
 
-- Setup "Multiple displays" and enable "HDR"
+- Setup "Multiple displays" and enable "HDR" (if available)
 
 - Change "Sound settings" to improve input/output quality
-
-- Set File Explorer Options to "Single-click to open an item"
 
 ### Restart the PC
 
@@ -62,15 +60,15 @@ You can go through the following list and change things manually or start off us
 
 - Node.js
 
-- qBittorrent
-
 - Bruno
-
-- Docker
 
 - Windows Terminal
 
-- WSL 2
+- Android Studio
+
+## Optional apps
+
+- qBittorrent
 
 ### Installing with Chocolatey
 
