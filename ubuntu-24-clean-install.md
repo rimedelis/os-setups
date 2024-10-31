@@ -2,7 +2,7 @@
 
 ### 0. If the PC is running Windows, go to `Control Panel\Hardware and Sound\Power Options\System Settings`, and under "Shutdown settings", uncheck "Turn on fast startup (recommended)" in order to disable fast startup. It's also mandatory to disable "Secure Boot" and recommended to disable "Fast Boot" in BIOS.
 
-### 0.1 To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. (I also find it best to remove any other USB devices connected to the laptop.)
+### 0.1 To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. On Lenovo laptops, restart the PC and press F12 (Fn+F12). I also find it best to remove any other USB devices connected to the laptop.
 
 Flashing a Linux image typically involves creating a bootable USB drive or SD card with the Linux distribution's installation files. Once the image is flashed onto the drive, it becomes formatted in a filesystem format that may not be natively supported by Windows or macOS.
 
