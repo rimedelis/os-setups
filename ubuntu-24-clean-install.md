@@ -30,14 +30,14 @@ gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
 # Dock on the bottom of the screen
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
 
-# Auto-hide the Dock
-gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
-
 # Hide "Trash" icon
 gsettings set org.gnome.shell.extensions.dash-to-dock show-trash false
 
 # Hide "Volumes and Devices" icons
 gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
+
+# Auto-hide the Dock
+gsettings set org.gnome.shell.extensions.dash-to-dock autohide true
 
 # Hide "Home" folder icon on desktop
 gsettings set org.gnome.shell.extensions.ding show-home false
@@ -51,6 +51,7 @@ Under "Mouse & Touchpad", increase "Pointer Speed" and check if "Tap to Click" i
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.75
 
+gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
