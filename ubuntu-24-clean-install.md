@@ -1,8 +1,8 @@
 # Clean Install -- Ubuntu 24
 
-## 0. If the PC is running Windows, go to `Control Panel\Hardware and Sound\Power Options\System Settings`, and under "Shutdown settings", uncheck "Turn on fast startup (recommended)" in order to disable fast startup. It's also mandatory to disable "Secure Boot" and recommended to disable "Fast Boot" in BIOS.
+### 0. If the PC is running Windows, go to `Control Panel\Hardware and Sound\Power Options\System Settings`, and under "Shutdown settings", uncheck "Turn on fast startup (recommended)" in order to disable fast startup. It's also mandatory to disable "Secure Boot" and recommended to disable "Fast Boot" in BIOS.
 
-## 0.1 To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. (I also find it best to remove any other USB devices connected to the laptop.)
+### 0.1 To be able to boot successfully from USB on my laptop, the trick is to simultaneouly insert the USB flash drive and press F9, right before the screen first lights up after restart, or else the device won't appear on the boot list. (I also find it best to remove any other USB devices connected to the laptop.)
 
 Flashing a Linux image typically involves creating a bootable USB drive or SD card with the Linux distribution's installation files. Once the image is flashed onto the drive, it becomes formatted in a filesystem format that may not be natively supported by Windows or macOS.
 
@@ -10,15 +10,15 @@ Windows typically uses NTFS or FAT32 filesystems, while macOS uses HFS+ or APFS.
 
 Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/>
 
-## Tip: execute [ubuntu-1.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-1.sh) to automate steps 1 to 8.
+### Tip: execute [ubuntu-1.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-1.sh) to automate steps 1 to 8.
 
-## 1. Check for updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
+### 1. Check for updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
 ```
 
-## 2. Change Dock and Desktop settings
+### 2. Change Dock and Desktop settings
 
 ```bash
 # Enable minimize when clicking on dock icons, and preview the opened windows of the same app when hovering over the icon
@@ -43,7 +43,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock show-mounts false
 gsettings set org.gnome.shell.extensions.ding show-home false
 ```
 
-## 3. Change Mouse and Touchpad settings
+### 3. Change Mouse and Touchpad settings
 
 Under "Mouse & Touchpad", increase "Pointer Speed" and check if "Tap to Click" is enabled.
 
@@ -54,7 +54,7 @@ gsettings set org.gnome.desktop.peripherals.touchpad speed 0.75
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
-## 4. Change Power settings
+### 4. Change Power settings
 
 Under "Power", enable "Show battery percentage", disable "Automatic Suspend" and set "Power Button Behavior" to "Suspend".
 
@@ -70,13 +70,13 @@ gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-typ
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
 ```
 
-## 5. Enable Num Lock at startup
+### 5. Enable Num Lock at startup
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.keyboard remember-numlock-state true
 ```
 
-## 6. Show Hidden Files
+### 6. Show Hidden Files
 
 Go to "Files" and under "Main Menu", enable "Show Hidden Files" (or press Ctrl+H).
 
@@ -85,7 +85,7 @@ Go to "Files" and under "Main Menu", enable "Show Hidden Files" (or press Ctrl+H
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
 ```
 
-## 7. Enable Location Services
+### 7. Enable Location Services
 
 Under "Privacy", enable "Location Services".
 
@@ -93,7 +93,7 @@ Under "Privacy", enable "Location Services".
 gsettings set org.gnome.system.location enabled true
 ```
 
-## 8. Enable Night Light and Dark Style
+### 8. Enable Night Light and Dark Style
 
 Under "Screen Display", enable "Night Light" and set it to "Sunset to Sunrise".
 
@@ -107,17 +107,17 @@ Under "Appearance", check if "Dark Style" is enabled.
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 ```
 
-## Restart the computer for changes to apply: `sudo reboot now`
+### Restart the computer for changes to apply: `sudo reboot now`
 
-## 9. Enable Enhanced Tilling
+### 9. Enable Enhanced Tilling
 
 Under "Ubuntu Desktop", check if "Enhanced Tilling" is enabled.
 
-## 10. Opt out of data collection
+### 10. Opt out of data collection
 
 Under "Privacy", go to "Diagnostics" and set "Problem Reporting" to "Never".
 
-## 11. Change Software & Updates settings
+### 11. Change Software & Updates settings
 
 Use the Super Key to open the Activities overview and search for "Software & Updates":
 
@@ -127,11 +127,11 @@ Use the Super Key to open the Activities overview and search for "Software & Upd
 
 - Under "Additional Drivers", check if updates are available.
 
-## 12. Update firmware via the Firmware Updater app
+### 12. Update firmware via the Firmware Updater app
 
-## Tip: execute [ubuntu-2.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-2.sh) to automate steps 13 to 15
+### Tip: execute [ubuntu-2.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-2.sh) to automate steps 13 to 15
 
-## 13. Packages to install
+### 13. Packages to install
 
 - In recent versions of Ubuntu, the Snap package manager (snapd) is preinstalled by default -- it's the new App Center (orange icon), featuring only Debian and Snap apps from the Snapcraft store. As a rule, prefer snaps whenever available.
 
@@ -139,13 +139,13 @@ Use the Super Key to open the Activities overview and search for "Software & Upd
 
 - To manually fetch the latest versions of installed snaps from the Snap Store and update them: `sudo snap refresh`.
 
-### ubuntu-restricted-extras -- software package for the computer operating system Ubuntu that allows the user to install essential software which is not already included due to legal or copyright reasons
+#### ubuntu-restricted-extras -- software package for the computer operating system Ubuntu that allows the user to install essential software which is not already included due to legal or copyright reasons
 
 ```bash
 sudo apt install ubuntu-restricted-extras
 ```
 
-### TLP -- command line utility for Linux, saving laptop battery power
+#### TLP -- command line utility for Linux, saving laptop battery power
 
 ```bash
 sudo apt-get install tlp
@@ -156,7 +156,7 @@ sudo tlp start
 # To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with sudo tlp start to apply the changes
 ```
 
-### Google Chrome -- web browser
+#### Google Chrome -- web browser
 
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -164,7 +164,7 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
-### Git -- distributed version control system
+#### Git -- distributed version control system
 
 ```bash
 sudo apt install git-all
@@ -174,7 +174,7 @@ git config --global user.name "rimedelis"
 git config --global user.email email@example.com
 ```
 
-### Microsoft Edge (for most recent version, visit this page and then edit the link in the command below: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>) -- web browser
+#### Microsoft Edge (for most recent version, visit this page and then edit the link in the command below: <https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/>) -- web browser
 
 ```bash
 cd ~/Downloads
@@ -184,13 +184,13 @@ wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable
 sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 ```
 
-### Visual Studio Code (or VSCodium) -- source-code editor
+#### Visual Studio Code (or VSCodium) -- source-code editor
 
 ```bash
 sudo snap install code --classic
 ```
 
-## 14. Packages to uninstall
+### 14. Packages to uninstall
 
 Open "App Center" and uninstall:
 
@@ -199,7 +199,7 @@ Open "App Center" and uninstall:
 sudo snap remove firefox
 ```
 
-## 15. Clean up afterwards
+### 15. Clean up afterwards
 
 ```bash
 # To remove the packages that failed to install completely,
@@ -212,33 +212,33 @@ sudo apt clean
 sudo apt autoremove
 ```
 
-## Restart the computer for changes to apply: `sudo reboot now`
+### Restart the computer for changes to apply: `sudo reboot now`
 
-## 16. Change Default Applications
+### 16. Change Default Applications
 
 Under "Settings", set the Default Applications.
 
-## 17. Disable Startup Applications
+### 17. Disable Startup Applications
 
 Under "Startup Application Preferences", disable or remove the programs.
 
-## 18. Login to Ubuntu One account
+### 18. Login to Ubuntu One account
 
 <https://login.staging.ubuntu.com/>
 
-## 19. Add Online Accounts
+### 19. Add Online Accounts
 
 Under "Online Accounts", select an account from the list.
 
-## 20. Change login screen photo
+### 20. Change login screen photo
 
 Under "Users", edit the login screen photo.
 
-## Restart the computer for changes to apply: `sudo reboot now`
+### Restart the computer for changes to apply: `sudo reboot now`
 
-## Optional packages and extras
+### Optional packages and extras
 
-### Flatpak (adds the Software app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
+#### Flatpak (adds the Software app (white icon, a shopping bag with 3 colorful geometric shapes) to the system. The only downside is that you’ll see multiple applications in Ubuntu software center. Flatpak applications are tagged with source dl.flathub.org and thus you can easily distinguish them.)
 
 Note: Snaps are more tightly integrated with Ubuntu specifically, whereas Flatpaks are developed for several Linux distros. However, both systems utilize sandboxing to isolate applications from the rest of the system. Their self-containment means that they can run independently of the system's installed libraries, reducing dependency issues and conflicts.
 
@@ -252,25 +252,25 @@ sudo apt install gnome-software-plugin-flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 ```
 
-### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
+#### Enable weather forecast on calendar's sidebar (check if equivalent snap exists?)
 
 ```bash
 sudo apt install gnome-weather
 ```
 
-### Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs. Livepatch is included in Ubuntu Pro)
+#### Enable Livepatch (eliminates the need for unplanned maintenance windows for kernel vulnerabilities, by patching the Linux kernel while the system runs. Livepatch is included in Ubuntu Pro)
 
 Under "Software & Updates", enable "Livepatch".
 
 Check [How to enable the Livepatch client](https://ubuntu.com/security/livepatch/docs/livepatch/how-to/enable).
 
-### Stacer -- system optimizer and application monitor
+#### Stacer -- system optimizer and application monitor
 
 ```bash
 sudo apt install stacer
 ```
 
-### Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)
+#### Use apt-fast instead of apt (or apt-get, which is slowly becoming obsolete)
 
 ```bash
 # Add the apt-fast PPA (Personal Package Archive) to the system's software sources.
@@ -286,7 +286,7 @@ sudo apt-get update
 sudo apt-get install apt-fast
 ```
 
-### Thonny -- IDE for Python designed for beginners
+#### Thonny -- IDE for Python designed for beginners
 
 ```bash
 # Unofficial snap
@@ -295,51 +295,51 @@ sudo snap install thonny
 
 However, for my use case, I installed version 4.0.1, .deb package from the Software app (Flatpak/Flathub related app) because snap didn't let me install packages on Raspberry, didn't recognize the existence of the Raspberry.
 
-#### In Thonny, to allow the Raspberry to run
+##### In Thonny, to allow the Raspberry to run
 
 ```bash
 sudo usermod -a -G dialout <username>
 ```
 
-### SimpleScreenRecorder -- record programs and games
+#### SimpleScreenRecorder -- record programs and games
 
 ```bash
 sudo apt install simplescreenrecorder
 ```
 
-### Virtual Machine Manager -- managing virtual machines through libvirt
+#### Virtual Machine Manager -- managing virtual machines through libvirt
 
 ```bash
 sudo apt install virt-manager
 ```
 
-#### AutoCAD inside a Windows VM
+##### AutoCAD inside a Windows VM
 
-### VLC Player -- media player software and streaming media server
+#### VLC Player -- media player software and streaming media server
 
 ```bash
 sudo snap install vlc
 ```
 
-### GIMP -- cross-platform image editor
+#### GIMP -- cross-platform image editor
 
 ```bash
 sudo snap install gimp
 ```
 
-### FFmpeg -- record, convert and stream audio and video
+#### FFmpeg -- record, convert and stream audio and video
 
 ```bash
 sudo snap install ffmpeg
 ```
 
-### Wine or Bottles (Wine is a compatibility layer that allows you to run Windows applications on Ubuntu)
+#### Wine or Bottles (Wine is a compatibility layer that allows you to run Windows applications on Ubuntu)
 
 ```bash
 sudo apt install wine
 ```
 
-### QBittorrent -- open-source BitTorrent client
+#### QBittorrent -- open-source BitTorrent client
 
 ```bash
 # Unofficial snap
@@ -350,19 +350,19 @@ sudo snap install qbittorrent-arnatious
 sudo apt install qbittorrent
 ```
 
-### Obsidian -- personal knowledge base and note-taking software application
+#### Obsidian -- personal knowledge base and note-taking software application
 
 ```bash
 sudo snap install obsidian --classic
 ```
 
-### Discord -- instant messaging and VoIP social platform
+#### Discord -- instant messaging and VoIP social platform
 
 ```bash
 sudo snap install discord
 ```
 
-### Diodon -- clipboard manager
+#### Diodon -- clipboard manager
 
 ```bash
 sudo add-apt-repository ppa:diodon-team/stable
@@ -370,7 +370,7 @@ sudo add-apt-repository ppa:diodon-team/stable
 sudo apt update
 ```
 
-### ufw -- uncomplicated firewall
+#### ufw -- uncomplicated firewall
 
 ```bash
 sudo snap install ufw
@@ -385,23 +385,23 @@ sudo ufw enable
 sudo ufw deny 22/tcp
 ```
 
-### Node.js -- JavaScript runtime built on Chrome's V8 JavaScript engine
+#### Node.js -- JavaScript runtime built on Chrome's V8 JavaScript engine
 
 ```bash
 sudo snap install node --classic
 ```
 
-### GitHub CLI + Copilot
+#### GitHub CLI + Copilot
 
 [Using GitHub Copilot in the CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli)
 
-### GS Connect -- for Android Phone Users
+#### GS Connect -- for Android Phone Users
 
-### GNOME Sushi -- for Quick Look feature (similar to macOS)
+#### GNOME Sushi -- for Quick Look feature (similar to macOS)
 
-## Tips and tricks
+### Tips and tricks
 
-### In Anaconda
+#### In Anaconda
 
 ```bash
 sudo apt-get install libgl1+libglx-mesa0 libegl1 libxrandr2 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
@@ -409,11 +409,11 @@ sudo apt-get install libgl1+libglx-mesa0 libegl1 libxrandr2 libxrandr2 libxss1 l
 libgl1+libglx-mesa0 libegl1
 ```
 
-### Prevent a Package From Being Updated in Ubuntu ([How to prevent a package from being updated in Ubuntu](https://itsfoss.com/prevent-package-update-ubuntu/))
+#### Prevent a Package From Being Updated in Ubuntu ([How to prevent a package from being updated in Ubuntu](https://itsfoss.com/prevent-package-update-ubuntu/))
 
 This can be done using Aptitude or SPM:
 
-#### Using Aptitude
+##### Using Aptitude
 
 ```bash
 # To hold a package and thus prevent apt from making changes to it
@@ -426,7 +426,7 @@ sudo apt-mark showhold
 sudo apt-mark unhold package_name
 ```
 
-#### Using the installable Synaptic Package Manager
+##### Using the installable Synaptic Package Manager
 
 ```bash
 sudo apt install synaptic
@@ -434,6 +434,6 @@ sudo apt install synaptic
 # The rest is done via the app's GUI.
 ```
 
-## Uninstalling Ubuntu
+### Uninstalling Ubuntu
 
 To uninstall Ubuntu and delete dual boot in Windows: <https://www.youtube.com/watch?v=mQyxtWrUNlE>
