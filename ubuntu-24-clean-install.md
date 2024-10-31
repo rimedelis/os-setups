@@ -191,6 +191,34 @@ sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 sudo snap install code --classic
 ```
 
+#### Android Studio -- integrated development environment for Android
+
+```bash
+sudo snap install android-studio --classic
+```
+
+#### Flutter -- UI toolkit for building natively compiled applications
+
+```bash
+sudo snap install flutter --classic
+```
+
+#### OpenJDK 21 -- Java Development Kit
+
+```bash
+sudo apt install openjdk-21-jdk
+```
+
+#### Google Android Platform Tools
+
+```bash
+sudo apt install google-android-platform-tools-installer
+```
+
+#### Android Command Line Tools
+
+Please install the Android Command Line Tools manually from the [official website](https://developer.android.com/studio).
+
 ### 14. Packages to uninstall
 
 Open "App Center" and uninstall:
