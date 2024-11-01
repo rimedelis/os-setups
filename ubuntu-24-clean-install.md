@@ -220,6 +220,41 @@ sudo apt install google-android-platform-tools-installer
 sudo snap install node --classic
 ```
 
+#### LAMP Stack -- Linux, Apache, MySQL, PHP
+
+```bash
+sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
+
+# The default web directory for Apache is /var/www/html. Copy the backend folder to /var/www/html:
+sudo cp -r ~/Documents/php_base /var/www/html/
+
+# Set Permissions so Apache can access the folder:
+sudo chown -R www-data:www-data /var/www/html/php_base
+sudo chmod -R 755 /var/www/html/php_base
+
+# Install dependencies for Composer
+sudo apt install php-cli unzip curl -y
+
+# Download the Composer installer
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+
+# Run the installer
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+# Add the Directory to Git’s Safe Directories
+git config --global --add safe.directory /var/www/html/php_base
+
+# Set Directory Permissions and Ownership
+# Change ownership of the directory to your user (if it’s currently set to root or www-data)
+sudo chown -R $USER:$USER /var/www/html/php_base
+
+# Set correct permissions
+sudo chmod -R 755 /var/www/html/php_base
+
+# Run composer for the backend folder to install the dependencies listed in the composer.json file
+composer install
+```
+
 ### 14. Packages to uninstall
 
 Open "App Center" and uninstall:
