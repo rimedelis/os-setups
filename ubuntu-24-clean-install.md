@@ -12,7 +12,7 @@ Here's how to fix this: <https://blog.balena.io/did-etcher-break-my-usb-sd-card/
 
 ### Tip: execute [ubuntu-1.sh](https://github.com/rimedelis/os-setups/blob/4860916e4dbcad4c4c6dd464b116720b5d4ec597/ubuntu-1.sh) to automate steps 1 to 8.
 
-### 1. Check for updates (`apt` stands for Aptitude. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
+### 1. Check for updates (`apt` stands for Advanced Package Tool. In truth, `apt` doesn't need to be preceeded by `sudo` as it automatically performs operations with superuser privileges when necessary, but it's still standard to type it, to guarantee that the commands run successfully in all situations.)
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -45,29 +45,30 @@ gsettings set org.gnome.shell.extensions.ding show-home false
 
 ### 3. Change Mouse and Touchpad settings
 
-Under "Mouse & Touchpad", increase "Pointer Speed" and check if "Tap to Click" is enabled.
+Under "Mouse & Touchpad", increase "Pointer Speed", set "Secondary Click" to "Two Finger Push" and check if "Tap to Click" is enabled.
 
 ```bash
 gsettings set org.gnome.desktop.peripherals.mouse speed 1.0
 gsettings set org.gnome.desktop.peripherals.touchpad speed 0.75
 
 gsettings set org.gnome.desktop.peripherals.touchpad click-method 'fingers'
+
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
 ### 4. Change Power settings
 
-Under "Power", enable "Show battery percentage", disable "Automatic Suspend" and set "Power Button Behavior" to "Suspend".
+Under "Power", disable "Dim Screen", set "Screen Blank" to "Never", enable "Show battery percentage", disable "Automatic Suspend" and set "Power Button Behavior" to "Suspend".
 
 ```bash
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim false
+
+gsettings set org.gnome.desktop.session idle-delay 0
+
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-```
 
-```bash
 gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-type 'nothing'
-```
 
-```bash
 gsettings set org.gnome.settings-daemon.plugins.power power-button-action 'suspend'
 ```
 
@@ -191,12 +192,6 @@ sudo apt install ./microsoft-edge-stable_122.0.2365.92-1_amd64.deb
 sudo snap install code --classic
 ```
 
-#### Android Studio -- integrated development environment for Android
-
-```bash
-sudo snap install android-studio --classic
-```
-
 #### Flutter -- UI toolkit for building natively compiled applications
 
 ```bash
@@ -209,15 +204,21 @@ sudo snap install flutter --classic
 sudo apt install openjdk-21-jdk
 ```
 
+#### Android Command Line Tools
+
+Please install the Android Command Line Tools manually from the [official website](https://developer.android.com/studio).
+
 #### Google Android Platform Tools
 
 ```bash
 sudo apt install google-android-platform-tools-installer
 ```
 
-#### Android Command Line Tools
+#### Node.js -- JavaScript runtime built on Chrome's V8 JavaScript engine
 
-Please install the Android Command Line Tools manually from the [official website](https://developer.android.com/studio).
+```bash
+sudo snap install node --classic
+```
 
 ### 14. Packages to uninstall
 
@@ -344,12 +345,6 @@ sudo apt install virt-manager
 
 ##### AutoCAD inside a Windows VM
 
-#### VLC Player -- media player software and streaming media server
-
-```bash
-sudo snap install vlc
-```
-
 #### GIMP -- cross-platform image editor
 
 ```bash
@@ -379,18 +374,6 @@ sudo snap install qbittorrent-arnatious
 sudo apt install qbittorrent
 ```
 
-#### Obsidian -- personal knowledge base and note-taking software application
-
-```bash
-sudo snap install obsidian --classic
-```
-
-#### Discord -- instant messaging and VoIP social platform
-
-```bash
-sudo snap install discord
-```
-
 #### Diodon -- clipboard manager
 
 ```bash
@@ -412,12 +395,6 @@ sudo ufw enable
 # This app allows control over our ports.
 # Example: if I'm running an SSH server on port 22 and I want to disable this port to prevent connections from remote computers, I'd use this command
 sudo ufw deny 22/tcp
-```
-
-#### Node.js -- JavaScript runtime built on Chrome's V8 JavaScript engine
-
-```bash
-sudo snap install node --classic
 ```
 
 #### GitHub CLI + Copilot
