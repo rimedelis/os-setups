@@ -545,48 +545,48 @@ sudo snap install docker
 
 1. If you haven't already, create a folder for your projects:
 
-  ```bash
-  mkdir -p /home/rimedelis/code
-  ```
+   ```bash
+   mkdir -p /home/rimedelis/code
+   ```
 
-  This will create a folder at /home/rimedelis/code, which you'll use for your project files.
-2. Add [[docker-compose.yml]] File: Paste the docker-compose.yml file (from this repository) into the code folder located at:
+   This will create a folder at /home/rimedelis/code, which you'll use for your project files.
 
-  /home/rimedelis/code
+2. Add ```docker-compose.yml``` file: Paste the docker-compose.yml file (from this repository) into the code folder located at ```/home/rimedelis/code```
+
 3. Spin Up Containers: Open the terminal in your code folder and run:
 
-  This command builds and runs your containers in detached mode.
+   This command builds and runs your containers in detached mode.
 
-  ```bash
-  sudo docker-compose up -d --build
-  ```
+   ```bash
+   sudo docker-compose up -d --build
+   ```
 
 4. Access Specific Containers: Depending on your project requirements, enter the appropriate container to run necessary commands:
 
-  Node Projects:
+   Node Projects:
 
-  ```bash
-  sudo docker exec -it node-container bash
-  ```
+   ```bash
+   sudo docker exec -it node-container bash
+   ```
 
-  After entering the container, navigate to your project folder before running commands. For example:
+   After entering the container, navigate to your project folder before running commands. For example:
 
-  ```bash
-  cd /code/my-repo-name/
-  npm run dev
-  ```
+   ```bash
+   cd /code/my-repo-name/
+   npm run dev
+   ```
 
-  Composer (PHP) Projects:
+   Composer (PHP) Projects:
 
-  ```bash
-  sudo docker exec -it composer-container bash
-  ```
+   ```bash
+   sudo docker exec -it composer-container bash
+   ```
 
-  Python Projects:
+   Python Projects:
 
-  ```bash
-  sudo docker exec -it python-container bash
-  ```
+   ```bash
+   sudo docker exec -it python-container bash
+   ```
 
 5. Run Your Commands: Once inside the chosen container and in the correct project directory, execute any additional commands you need (e.g., running npm run dev for Node, composer up for PHP projects, or your specific Python commands).
 
