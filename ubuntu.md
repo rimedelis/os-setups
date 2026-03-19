@@ -382,17 +382,16 @@ adb start-server
 ##### Step 3: Pair with Android Device
 
 1. On your Android phone:
-
    - Select "Pair device with pairing code"
    - Note both the pairing code (e.g., 941735) and the pairing port (e.g., 35703)
-  
+
 2. In the terminal:
 
-  Use the PAIRING port shown on your phone. When prompted, enter the pairing code shown on your phone.
+   Use the PAIRING port shown on your phone. When prompted, enter the pairing code shown on your phone.
 
-  ```bash
-  adb pair 192.168.1.64:35703
-  ```
+   ```bash
+   adb pair 192.168.1.64:35703
+   ```
 
 ##### Step 4: Connect to the Device
 
@@ -407,7 +406,7 @@ adb connect 192.168.1.64:42573
 Verify ADB sees the device, then check if Flutter recognizes the device. It should show something like:
 
 - List of devices attached
-- 192.168.1.64:42573      device
+- 192.168.1.64:42573 device
 
 ```bash
 adb devices
@@ -551,7 +550,7 @@ sudo snap install docker
 
    This will create a folder at /home/rimedelis/code, which you'll use for your project files.
 
-2. Add ```docker-compose.yml``` file: Paste the docker-compose.yml file (from this repository) into the code folder located at ```/home/rimedelis/code```
+2. Add `docker-compose.yml` file: Paste the docker-compose.yml file (from this repository) into the code folder located at `/home/rimedelis/code`
 
 3. Spin Up Containers: Open the terminal in your code folder and run:
 
@@ -642,7 +641,7 @@ sudo apt install tlp
 sudo tlp start
 ```
 
-To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with ```sudo tlp start``` to apply the changes.
+To make any customizations to TLP's settings, you can edit the configuration file (/etc/default/tlp) and then reload TLP with `sudo tlp start` to apply the changes.
 
 Note: Installing TLP will remove the default power-profiles-daemon package. This means you'll no longer be able to switch power modes (Power Saver, Balanced, Performance) from the system settings UI.
 

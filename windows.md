@@ -154,6 +154,7 @@ winget upgrade --all
    ```
 
    This will install the core WSL components.
+
 2. Restart Your PC.
 3. Install the Default Linux Distro: After the restart, open Windows Terminal and run:
 
@@ -162,6 +163,7 @@ winget upgrade --all
    ```
 
    This will install the default Linux distribution (usually Ubuntu).
+
 4. Restart Your PC.
 5. Set Up WSL: After the restart, open Windows Terminal and run:
 
@@ -170,6 +172,7 @@ winget upgrade --all
    ```
 
    During the setup, you'll be asked to create a username and password. Set the username as "rimedelis" and password as "1234".
+
 6. Create Your Project Folder: Inside the WSL environment, manually create a code folder for your projects, or do it automatically by running:
 
    ```bash
@@ -338,7 +341,7 @@ Instead of using Docker containers, you can install all necessary development to
 
    #### Step 5: Verify Connection
 
-   Verify ADB sees the device, then check if Flutter recognizes the device. It should show something like "List of devices attached" and "192.168.1.64:42573      device".
+   Verify ADB sees the device, then check if Flutter recognizes the device. It should show something like "List of devices attached" and "192.168.1.64:42573 device".
 
    ```bash
    adb devices
