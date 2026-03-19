@@ -1,4 +1,4 @@
-# Omarchy
+# Omarchy Setup Guide
 
 ## BIOS and Boot Notes
 
