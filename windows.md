@@ -355,6 +355,8 @@ Instead of using Docker containers, you can install all necessary development to
 
    flutter run
 
+   # or specify the device if you have multiple devices connected
+
    flutter run -d 192.168.1.64:42573
    ```
 
