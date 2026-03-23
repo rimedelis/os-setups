@@ -44,17 +44,6 @@ sudo apt install -y ffmpegthumbs kio-extras
 sudo apt install -y build-essential
 sudo apt install -y ttf-mscorefonts-installer
 
-sudo apt install -y ufw
-sudo ufw default deny incoming
-sudo ufw default allow outgoing
-sudo ufw enable
-# Allow local web development ports
-sudo ufw allow 3000/tcp   # Node / React default dev port
-```
-
-CPU microcode:
-
-```bash
 sudo apt install -y intel-microcode
 ```
 
