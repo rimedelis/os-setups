@@ -302,27 +302,25 @@ mkdir -p ~/Android/Sdk/cmdline-tools/latest
 cd ~/Android/Sdk/cmdline-tools/latest
 ```
 
-Download Android Command Line Tools from:
-
-<https://developer.android.com/studio>
+Download Android Command Line Tools from the official website: <https://developer.android.com/studio>
 
 Example:
 
 ```bash
-wget https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip
+wget https://dl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip
 ```
 
 Extract:
 
 ```bash
-unzip commandlinetools-linux-13114758_latest.zip
+unzip commandlinetools-linux-14742923_latest.zip
 ```
 
 Move to expected structure:
 
 ```bash
 mv cmdline-tools/* .
-rm -r commandlinetools-linux-13114758_latest.zip cmdline-tools
+rm -r commandlinetools-linux-14742923_latest.zip cmdline-tools
 ```
 
 Install required SDK components:
