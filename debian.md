@@ -44,38 +44,13 @@ sudo apt install -y ttf-mscorefonts-installer
 sudo apt install -y intel-microcode
 ```
 
-### KDE Plasma settings (your current desktop)
-
-```bash
-# Enable Dark Theme (Tema Escuro)
-lookandfeeltool -a org.kde.breezedark.desktop
-```
-
 ### Restart the computer for changes to apply
 
 ```bash
 sudo reboot now
 ```
 
-### KDE app center and updates behavior
-
-On Debian KDE, use Discover.
-
-Install Flatpak integration in Discover:
-
-```bash
-sudo apt install -y flatpak plasma-discover-backend-flatpak
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-
-# Install Flatseal to manage Flatpak permissions (Folders, USB, etc.)
-flatpak install -y flathub com.github.tchx84.Flatseal
-```
-
 ## Packages to install
-
-- On Debian, prefer apt whenever available.
-- Snap is not always preinstalled on Debian. Install it only if you need Snap packages.
-- Avoid Ubuntu PPAs on Debian. Use Debian repos, official vendor repos, or Flatpak.
 
 ### Google Chrome
 
@@ -442,7 +417,7 @@ sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 ### Thonny
 
 ```bash
-flatpak install -y flathub org.thonny.Thonny
+sudo apt install -y thonny
 ```
 
 ### Microsoft Edge -- web browser
