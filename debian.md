@@ -49,30 +49,6 @@ sudo apt install -y intel-microcode
 ```bash
 # Enable Dark Theme (Tema Escuro)
 lookandfeeltool -a org.kde.breezedark.desktop
-
-# Mouse Speed (Value from -1.0 to 1.0)
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Mouse" --key "PointerSensitivity" 0.6
-
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Mouse" --key "AccelerationProfile" 0
-
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "PointerSensitivity" 0.6
-
-# Tap to Click (Ativar o clique com toque leve)
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "TapToClick" true
-
-# Inverter a direção do scroll (Scroll Natural - true ou false)
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "NaturalScroll" false
-
-# Show battery percentage (on the battery icon)
-kwriteconfig6 --file plasmanotifierrc --group "SystemsSettings" --key "ShowBatteryPercentage" true
-
-# Enable Num Lock on KDE startup
-kwriteconfig6 --file kcminputrc --group Keyboard --key NumLock 2
-# (Note: 0 = Enable, 1 = Disable, 2 = Leave as is on startup)
-
-# Apply interface changes without restarting the session (in some cases)
-qdbus6 org.kde.KWin /KWin reconfigure
-plasmashell --replace & disown
 ```
 
 ### Restart the computer for changes to apply
@@ -365,14 +341,6 @@ flutter run
 flutter run -d 192.168.1.64:42573
 ```
 
-### Change Default Applications
-
-On KDE: System Settings -> Applications -> Default Applications.
-
-### Disable Startup Applications
-
-On KDE: System Settings -> Session -> Autostart.
-
 ## Optional packages and extras
 
 ### VLC
@@ -503,7 +471,7 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ## Packages to uninstall
 
 ```bash
-sudo apt purge -y firefox-esr
+sudo apt purge -y firefox-esr akregator kaddressbook korganizer
 ```
 
 ## Clean up afterwards
@@ -521,12 +489,6 @@ sudo reboot now
 ```
 
 ## Tips and tricks
-
-### To make Anaconda work
-
-```bash
-sudo apt install -y libgl1 libglx-mesa0 libegl1 libxrandr2 libxss1 libxcursor1 libxcomposite1 libasound2 libxi6 libxtst6
-```
 
 ### Prevent a package from being updated in Debian
 
