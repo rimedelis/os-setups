@@ -295,37 +295,19 @@ flutter doctor --android-licenses
 
 Only if Android Studio did not install SDK and flutter doctor reports Unable to locate Android SDK.
 
-Create directories:
+Use the latest filename from the official website: <https://developer.android.com/studio>
 
 ```bash
 mkdir -p ~/Android/Sdk/cmdline-tools/latest
 cd ~/Android/Sdk/cmdline-tools/latest
-```
 
-Download Android Command Line Tools from the official website: <https://developer.android.com/studio>
-
-Example:
-
-```bash
 wget https://dl.google.com/android/repository/commandlinetools-linux-14742923_latest.zip
-```
 
-Extract:
-
-```bash
 unzip commandlinetools-linux-14742923_latest.zip
-```
 
-Move to expected structure:
-
-```bash
 mv cmdline-tools/* .
 rm -r commandlinetools-linux-14742923_latest.zip cmdline-tools
-```
 
-Install required SDK components:
-
-```bash
 sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
 yes | sdkmanager --licenses
 ```
