@@ -387,6 +387,13 @@ sudo apt install -y vlc
 sudo apt install -y qbittorrent
 ```
 
+### ZRAM (Performance Boost)
+
+```bash
+sudo apt install -y zram-tools
+# It configures itself automatically upon installation.
+```
+
 ### LAMP Stack (if you need a local web server)
 
 Install Apache, MySQL, and PHP with Apache module:
@@ -481,22 +488,6 @@ Then install downloaded package:
 ```bash
 cd ~/Downloads
 sudo apt install -y ./microsoft-edge-stable_*_amd64.deb
-```
-
-### TLP -- command line utility for Linux battery optimization
-
-```bash
-sudo apt install -y tlp
-sudo tlp start
-```
-
-You can customize settings in /etc/default/tlp and reload with sudo tlp start.
-
-### ZRAM (Performance Boost)
-
-```bash
-sudo apt install -y zram-tools
-# It configures itself automatically upon installation.
 ```
 
 ## Final Permissions and Groups
