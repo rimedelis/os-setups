@@ -61,7 +61,7 @@ kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "Poi
 kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "TapToClick" true
 
 # Inverter a direção do scroll (Scroll Natural - true ou false)
-kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "NaturalScroll" true
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "NaturalScroll" false
 
 # Show battery percentage (on the battery icon)
 kwriteconfig6 --file plasmanotifierrc --group "SystemsSettings" --key "ShowBatteryPercentage" true
