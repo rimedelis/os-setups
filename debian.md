@@ -98,6 +98,8 @@ Create a folder for all code projects:
 mkdir -p "$HOME/code"
 ```
 
+Tip: use Ctrl+Shift+I to format the entire file
+
 ### Node.js
 
 Use current LTS setup script:
@@ -475,14 +477,6 @@ Remove hold from a package:
 ```bash
 sudo apt-mark unhold package_name
 ```
-
-### To take screenshots in KDE
-
-PrintScreen opens the screenshot tool.
-
-Alt+PrintScreen captures the active window.
-
-Shift+PrintScreen captures the entire screen.
 
 ## Uninstalling Debian
 
