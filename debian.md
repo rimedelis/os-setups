@@ -33,17 +33,14 @@ EOF
 ### Check for updates and install base firmware/codecs
 
 ```bash
-# Enable 32-bit support (Multiarch)
 sudo dpkg --add-architecture i386
 sudo apt update
-sudo apt install -y curl wget ca-certificates gnupg software-properties-common
-
+sudo apt install -y curl wget ca-certificates gnupg
 sudo apt full-upgrade -y
 sudo apt install -y firmware-linux-nonfree libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly
 sudo apt install -y ffmpegthumbs kio-extras
 sudo apt install -y build-essential
 sudo apt install -y ttf-mscorefonts-installer
-
 sudo apt install -y intel-microcode
 ```
 
