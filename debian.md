@@ -186,11 +186,9 @@ Install base headers and the virtual environment tool:
 
 ```bash
 sudo apt install -y python3-pip python3-dev python3-venv
-```
 
-Install heavy/stable packages from Debian repositories (Global):
+# Install heavy/stable packages from Debian repositories (Global):
 
-```bash
 sudo apt install -y python3-ipykernel python3-numpy python3-pandas python3-seaborn python3-dotenv python3-requests python3-bs4 python3-wordcloud python3-tqdm python3-plotly python3-selenium python3-openpyxl
 ```
 
