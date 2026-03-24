@@ -66,10 +66,6 @@ kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "Nat
 # Show battery percentage (on the battery icon)
 kwriteconfig6 --file plasmanotifierrc --group "SystemsSettings" --key "ShowBatteryPercentage" true
 
-# 24h time format
-kwriteconfig6 --file kdeglobals --group "Locale" --key "TimeFormat" "HH:mm:ss"
-kwriteconfig6 --file kdeglobals --group "Locale" --key "Country" "pt_PT"
-
 # Enable Num Lock on KDE startup
 kwriteconfig6 --file kcminputrc --group Keyboard --key NumLock 2
 # (Note: 0 = Enable, 1 = Disable, 2 = Leave as is on startup)
@@ -165,25 +161,13 @@ Download installer:
 
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-```
 
-Verify installer integrity:
-
-```bash
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
 ACTUAL_SIGNATURE=$(php -r "echo hash_file('sha384', 'composer-setup.php');")
 if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]; then echo Installer corrupt; rm composer-setup.php; exit 1; fi
-```
 
-Install Composer system-wide:
-
-```bash
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-```
 
-Clean up:
-
-```bash
 php -r "unlink('composer-setup.php');"
 ```
 
