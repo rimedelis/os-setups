@@ -51,26 +51,32 @@ sudo apt install -y intel-microcode
 lookandfeeltool -a org.kde.breezedark.desktop
 
 # Mouse Speed (Value from -1.0 to 1.0)
-kwriteconfig6 --file kcminputrc --group Mouse --key PointerAcceleration 0.5
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Mouse" --key "PointerSensitivity" 0.6
 
-# Touchpad: Enable "Tap to Click"
-kwriteconfig6 --file libinputrc --group "Touchpad" --key "TapToClick" true
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Mouse" --key "AccelerationProfile" 0
 
-# Touchpad: Speed (Value from 1 to 20, with 10 as the default)
-kwriteconfig6 --file kcminputrc --group "Touchpad" --key "PointerSensitivity" 12
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "PointerSensitivity" 0.6
+
+# Tap to Click (Ativar o clique com toque leve)
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "TapToClick" true
+
+# Inverter a direção do scroll (Scroll Natural - true ou false)
+kwriteconfig6 --file kcminputrc --group "Libinput" --group "Touchpad" --key "NaturalScroll" true
 
 # Show battery percentage (on the battery icon)
-kwriteconfig6 --file plasmarc --group "StatusNotifierItem" --key "ShowBatteryPercentage" true
+kwriteconfig6 --file plasmanotifierrc --group "SystemsSettings" --key "ShowBatteryPercentage" true
 
 # 24h time format
 kwriteconfig6 --file kdeglobals --group "Locale" --key "TimeFormat" "HH:mm:ss"
+kwriteconfig6 --file kdeglobals --group "Locale" --key "Country" "pt_PT"
 
 # Enable Num Lock on KDE startup
-kwriteconfig6 --file kcminputrc --group Keyboard --key NumLock 0
+kwriteconfig6 --file kcminputrc --group Keyboard --key NumLock 2
 # (Note: 0 = Enable, 1 = Disable, 2 = Leave as is on startup)
 
 # Apply interface changes without restarting the session (in some cases)
 qdbus6 org.kde.KWin /KWin reconfigure
+plasmashell --replace & disown
 ```
 
 ### Restart the computer for changes to apply
