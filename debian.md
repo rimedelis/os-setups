@@ -44,6 +44,13 @@ sudo apt install -y ttf-mscorefonts-installer
 sudo apt install -y intel-microcode
 ```
 
+### KDE Plasma settings
+
+- Enable Dark Theme
+- Display scaling: 125%
+- Touchpad scroll direction: Natural
+- Power Profile: Performance
+
 ### Restart the computer for changes to apply
 
 ```bash
@@ -169,7 +176,7 @@ deactivate
 
 OR
 
-#### 3. Visual Studio Code Integration (UI Setup)
+Visual Studio Code Integration (UI Setup)
 
 To make VS Code recognize all libraries (System + Venv) automatically:
 
@@ -318,23 +325,8 @@ flutter run -d 192.168.1.64:42573
 
 ## Optional packages and extras
 
-### VLC
-
 ```bash
-sudo apt install -y vlc
-```
-
-### qBittorrent
-
-```bash
-sudo apt install -y qbittorrent
-```
-
-### ZRAM (Performance Boost)
-
-```bash
-sudo apt install -y zram-tools
-# It configures itself automatically upon installation.
+sudo apt install -y vlc qbittorrent zram-tools
 ```
 
 ### LAMP Stack (if you need a local web server)
