@@ -503,7 +503,7 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ## Packages to uninstall
 
 ```bash
-sudo apt remove -y firefox-esr
+sudo apt purge -y firefox-esr
 ```
 
 ## Clean up afterwards
