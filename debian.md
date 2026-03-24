@@ -240,47 +240,32 @@ sudo apt install -y openjdk-21-jdk
 
 ### Flutter
 
-Install dependencies:
-
 ```bash
 sudo apt update -y
 sudo apt install -y clang cmake ninja-build pkg-config libgtk-3-dev libstdc++-12-dev mesa-utils xz-utils unzip libvulkan1
-```
 
-Download latest stable release from:
-
-<https://docs.flutter.dev/get-started/install/linux>
-
-Install flow:
-
-```bash
 cd ~
-wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_4.0.0-stable.tar.xz
-tar xf flutter_linux_4.0.0-stable.tar.xz
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.41.5-stable.tar.xz
+tar xf flutter_linux_3.41.5-stable.tar.xz
 echo 'export PATH="$PATH:$HOME/flutter/bin"' >> ~/.bashrc
 source ~/.bashrc
 flutter doctor -v
 ```
 
-If the version above is outdated when you run this, replace with the current stable tarball from the official page.
+<https://docs.flutter.dev/install/archive#stable-channel>
+If the version above is outdated when you run this, replace with the current stable tarball from the official page: <https://docs.flutter.dev/install/archive#stable-channel>
 
 ### Android Studio
 
-Download current Linux tar.gz from:
-
-<https://developer.android.com/studio>
-
-Install example:
-
 ```bash
 cd ~/Downloads
-wget https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2026.1.1.0/android-studio-2026.1.1.0-linux.tar.gz
-sudo tar -xzf android-studio-2026.1.1.0-linux.tar.gz -C /opt/
+wget https://edgedl.me.gvt1.com/android/studio/ide-zips/2025.3.2.6/android-studio-panda2-linux.tar.gz
+sudo tar -xzf android-studio-panda2-linux.tar.gz -C /opt/
 sudo apt install -y libc6:i386 libncurses6:i386 libstdc++6:i386 lib32z1 libbz2-1.0:i386
 /opt/android-studio/bin/studio.sh
 ```
 
-If that exact build is no longer available, use the latest filename from the official website.
+If that exact build is no longer available, use the latest filename from the official website: <https://developer.android.com/studio>
 
 After launching Android Studio, complete setup and ensure SDK components are installed:
 
