@@ -252,7 +252,6 @@ source ~/.bashrc
 flutter doctor -v
 ```
 
-<https://docs.flutter.dev/install/archive#stable-channel>
 If the version above is outdated when you run this, replace with the current stable tarball from the official page: <https://docs.flutter.dev/install/archive#stable-channel>
 
 ### Android Studio
