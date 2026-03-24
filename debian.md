@@ -493,13 +493,14 @@ sudo apt install -y ./microsoft-edge-stable_*_amd64.deb
 ## Final Permissions and Groups
 
 ```bash
-# Ensure you can use Docker, Emulator and Serial without sudo
-sudo usermod -aG docker,kvm,libvirt,dialout,plugdev,video $USER
+# Ensure you can use all these without sudo
+sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
+
+# If you also want to manage Docker without sudo, add the docker group:
+# sudo usermod -aG docker,kvm,libvirt,dialout,plugdev,video $USER
 ```
 
 ## Packages to uninstall
-
-On Debian KDE, Firefox usually comes as firefox-esr package. Remove only if you want another channel:
 
 ```bash
 sudo apt remove -y firefox-esr
@@ -507,21 +508,9 @@ sudo apt remove -y firefox-esr
 
 ## Clean up afterwards
 
-To remove partially installed package data:
-
 ```bash
 sudo apt autoclean
-```
-
-Remove apt cache:
-
-```bash
 sudo apt clean
-```
-
-Remove unused dependencies:
-
-```bash
 sudo apt autoremove -y
 ```
 
