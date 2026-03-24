@@ -471,15 +471,14 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ## Packages to uninstall
 
 ```bash
-sudo apt purge -y firefox-esr akregator kaddressbook korganizer
-```
+sudo apt purge -y firefox-esr konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite kolourpaint* okular skanpage khelpcenter kfind krdc krfb kmousetool kmag kwrite kcalc
 
-## Clean up afterwards
+sudo apt autoremove -y
 
-```bash
+rm -rf ~/.mozilla/firefox ~/.config/libreoffice ~/.local/share/akonadi ~/.config/akonadi ~/.local/share/kmail2 ~/.local/share/korganizer ~/.local/share/kaddressbook ~/.local/share/okular ~/.local/share/kate ~/.local/share/konqueror ~/.config/okularrc ~/.config/katerc ~/.config/kwriterc ~/.config/akregatorrc ~/.config/kcalcrc
+
 sudo apt autoclean
 sudo apt clean
-sudo apt autoremove -y
 ```
 
 ### Restart the computer again for changes to apply
