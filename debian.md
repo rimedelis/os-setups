@@ -47,6 +47,7 @@ sudo apt install -y intel-microcode
 ### KDE Plasma settings
 
 - Dark Theme
+- Night Light
 - Display scaling: 125%
 - Touchpad scroll direction: Natural
 - Power Profile: Performance
