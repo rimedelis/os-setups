@@ -46,10 +46,12 @@ sudo apt install -y intel-microcode
 
 ### KDE Plasma settings
 
-- Enable Dark Theme
+- Dark Theme
 - Display scaling: 125%
 - Touchpad scroll direction: Natural
 - Power Profile: Performance
+- Hidden Files
+- Klipper settings
 
 ### Restart the computer for changes to apply
 
