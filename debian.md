@@ -160,7 +160,6 @@ sudo apt install -y python3-ipykernel python3-numpy python3-pandas python3-seabo
 Create a venv that can "see" the system packages (numpy, pandas) but allows installing extras like cloudscraper.
 
 ```bash
-# 1. Criar a pasta para os venvs
 mkdir -p "$HOME/.local/venvs"
 # The --system-site-packages flag is the secret to link Debian packages with Pip packages
 python3 -m venv --system-site-packages "$HOME/.local/venvs/tools"
@@ -175,7 +174,7 @@ How to run Python scripts with the virtual environment:
 ```bash
 source ~/.local/venvs/tools/bin/activate
 python meu_script.py
-# Quando terminares:
+# When done, you can deactivate the venv to return to the system Python environment:
 deactivate
 ```
 
