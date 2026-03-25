@@ -438,7 +438,7 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ## Packages to uninstall
 
 ```bash
-sudo apt purge -y firefox-esr chromium konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite skanpage kolourpaint* okular kwrite kcalc gimp* imagemagick kontrast xterm kmouth sweeper
+sudo apt purge -y firefox-esr chromium konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite skanpage kolourpaint* okular kfind krdc krfb kmousetool kmag kwrite kcalc gimp* imagemagick kontrast xterm kmouth sweeper
 
 sudo apt autoclean
 sudo apt clean
