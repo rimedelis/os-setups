@@ -438,13 +438,13 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ## Packages to uninstall
 
 ```bash
-sudo apt purge -y firefox-esr chromium* konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite kolourpaint* okular skanpage khelpcenter kfind krdc krfb kmousetool kmag kwrite kcalc gimp* imagemagick* kontrast plasma-welcome
+sudo apt purge -y firefox-esr chromium* konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite skanpage kolourpaint* okular khelpcenter kfind krdc krfb kmousetool kmag kwrite kcalc gimp* imagemagick* kontrast plasma-welcome xterm kmouth sweeper drkonqi
 
 sudo apt autoremove -y
 sudo apt autoclean
 sudo apt clean
 
-rm -rf ~/.mozilla/firefox ~/.config/chromium ~/.cache/chromium ~/.config/GIMP ~/.config/libreoffice ~/.local/share/akonadi ~/.config/akonadi ~/.local/share/kmail2 ~/.local/share/korganizer ~/.local/share/kaddressbook ~/.local/share/okular ~/.local/share/kate ~/.local/share/konqueror ~/.config/okularrc ~/.config/katerc ~/.config/kwriterc ~/.config/akregatorrc ~/.config/kcalcrc
+rm -rf ~/.mozilla/firefox ~/.config/chromium ~/.cache/chromium ~/.config/GIMP ~/.config/libreoffice ~/.local/share/akonadi ~/.config/akonadi ~/.local/share/kmail2 ~/.local/share/korganizer ~/.local/share/kaddressbook ~/.local/share/okular ~/.local/share/kate ~/.local/share/konqueror ~/.config/okularrc ~/.config/katerc ~/.config/kwriterc ~/.config/akregatorrc ~/.config/kcalcrc ~/.config/kmouthrc ~/.config/sweeperrc ~/.cache/drkonqi ~/.config/drkonqirc ~/.Xresources ~/.Xdefaults
 ```
 
 ### Restart the computer again for changes to apply
