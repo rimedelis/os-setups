@@ -190,9 +190,9 @@ To make VS Code recognize all libraries (System + Venv) automatically:
 
 - Choose "Enter interpreter path..." -> "Find...".
 
-- Navigate to your venv folder: ~/.local/venvs/tools/bin/python (or /home/$USER/.local/venvs/tools/bin/python).
+- Navigate to your venv folder and pick the one named exactly `python`, not python3 or python3.13 or similar: ~/.local/venvs/tools/bin/python (or /home/$USER/.local/venvs/tools/bin/python).
 
-- Result: VS Code will now run your scripts using the "Play" button with full support for both Pandas (System) and Cloudscraper (Venv).
+- Result: VS Code will now run your scripts using the "Play" button with full support for all libraries.
 
 ### OpenJDK 21 -- Java Development Kit
 
