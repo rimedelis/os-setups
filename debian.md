@@ -169,18 +169,7 @@ python3 -m venv --system-site-packages "$HOME/.local/venvs/tools"
 "$HOME/.local/venvs/tools/bin/pip" install cloudscraper python-telegram-bot webdriver-manager PyPDF2 pdfplumber tabula-py browser_cookie3 XlsxWriter
 ```
 
-How to run Python scripts with the virtual environment:
-
-```bash
-source ~/.local/venvs/tools/bin/activate
-python meu_script.py
-# When done, you can deactivate the venv to return to the system Python environment:
-deactivate
-```
-
-OR
-
-Visual Studio Code Integration (UI Setup)
+#### 3. Visual Studio Code Integration
 
 To make VS Code recognize all libraries (System + Venv) automatically:
 
