@@ -440,7 +440,6 @@ sudo usermod -aG kvm,libvirt,dialout,plugdev,video $USER
 ```bash
 sudo apt purge -y firefox-esr chromium* konqueror konversation akregator kmail kaddressbook korganizer kget kate libreoffice* kmines kpat kmahjongg dragonplayer elisa juk skanlite skanpage kolourpaint* okular khelpcenter kfind krdc krfb kmousetool kmag kwrite kcalc gimp* imagemagick* kontrast plasma-welcome xterm kmouth sweeper drkonqi
 
-sudo apt autoremove -y
 sudo apt autoclean
 sudo apt clean
 
