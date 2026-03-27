@@ -330,6 +330,18 @@ wget "$LATEST_URL" -O obsidian_latest_amd64.deb
 sudo apt install -y ./obsidian_latest_amd64.deb
 
 rm obsidian_latest_amd64.deb
+
+# To sync Obsidian between devices, you can use Syncthing:
+
+sudo apt install syncthing
+
+# Enable Syncthing to start on login:
+systemctl --user enable syncthing.service
+
+# Start Syncthing:
+systemctl --user start syncthing.service
+
+# Access the Syncthing web interface at "localhost:8384"
 ```
 
 ### LAMP Stack (if you need a local web server)
