@@ -342,6 +342,11 @@ systemctl --user enable syncthing.service
 systemctl --user start syncthing.service
 
 # Access the Syncthing web interface at "localhost:8384"
+# Remove the "Default Folder" (the one pointing to ~/Sync)
+# Add a new folder for your vault: /home/rimedelis/code/obsidian
+# Folder ID: obsidian (USE THIS EXACT ID ON ALL DEVICES!)
+# Go to the "Ignore Patterns" tab for this folder and add: .git
+# Pair your devices by sharing device IDs in the "Devices" tab and accepting pairing requests on each device.
 ```
 
 ### LAMP Stack (if you need a local web server)
