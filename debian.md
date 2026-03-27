@@ -321,6 +321,17 @@ flutter run -d 192.168.1.64:42573
 sudo apt install -y vlc qbittorrent zram-tools
 ```
 
+```bash
+# Obsidian
+
+LATEST_URL=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep "browser_download_url.*_amd64.deb" | cut -d '"' -f 4)
+
+wget "$LATEST_URL" -O obsidian_latest_amd64.deb
+sudo apt install -y ./obsidian_latest_amd64.deb
+
+rm obsidian_latest_amd64.deb
+```
+
 ### LAMP Stack (if you need a local web server)
 
 Install Apache, MySQL, and PHP with Apache module:
