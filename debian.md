@@ -322,6 +322,19 @@ sudo apt install -y vlc qbittorrent zram-tools
 ```
 
 ```bash
+# Bruno
+
+curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9FA6017ECABE0266" | gpg --dearmor | sudo tee /etc/apt/keyrings/bruno.gpg > /dev/null
+
+sudo chmod 644 /etc/apt/keyrings/bruno.gpg
+
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/bruno.gpg] http://debian.usebruno.com/ bruno stable" | sudo tee /etc/apt/sources.list.d/bruno.list
+
+sudo apt update
+sudo apt install -y bruno
+```
+
+```bash
 # Obsidian
 
 LATEST_URL=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep "browser_download_url.*_amd64.deb" | cut -d '"' -f 4)
