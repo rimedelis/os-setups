@@ -334,34 +334,6 @@ sudo apt update
 sudo apt install -y bruno
 ```
 
-```bash
-# Obsidian
-
-LATEST_URL=$(curl -s https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest | grep "browser_download_url.*_amd64.deb" | cut -d '"' -f 4)
-
-wget "$LATEST_URL" -O obsidian_latest_amd64.deb
-sudo apt install -y ./obsidian_latest_amd64.deb
-
-rm obsidian_latest_amd64.deb
-
-# To sync Obsidian between devices, you can use Syncthing:
-
-sudo apt install syncthing
-
-# Enable Syncthing to start on login:
-systemctl --user enable syncthing.service
-
-# Start Syncthing:
-systemctl --user start syncthing.service
-
-# Access the Syncthing web interface at "localhost:8384"
-# Remove the "Default Folder" (the one pointing to ~/Sync)
-# Add a new folder for your vault: /home/rimedelis/code/obsidian
-# Folder ID: obsidian (USE THIS EXACT ID ON ALL DEVICES!)
-# Go to the "Ignore Patterns" tab for this folder and add: .git
-# Pair your devices by sharing device IDs in the "Devices" tab and accepting pairing requests on each device.
-```
-
 ### LAMP Stack (if you need a local web server)
 
 Install Apache, MySQL, and PHP with Apache module:
