@@ -166,7 +166,7 @@ python3 -m venv --system-site-packages "$HOME/.local/venvs/tools"
 
 # Install extras not available in Debian repos
 "$HOME/.local/venvs/tools/bin/pip" install --upgrade pip
-"$HOME/.local/venvs/tools/bin/pip" install cloudscraper python-telegram-bot webdriver-manager PyPDF2 pdfplumber tabula-py browser_cookie3 XlsxWriter
+"$HOME/.local/venvs/tools/bin/pip" install cloudscraper python-telegram-bot webdriver-manager PyPDF2 pdfplumber tabula-py browser_cookie3 XlsxWriter Pillow rapidocr-onnxruntime
 ```
 
 #### 3. Visual Studio Code Integration
