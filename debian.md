@@ -321,6 +321,19 @@ flutter run -d 192.168.1.64:42573
 sudo apt install -y vlc qbittorrent zram-tools
 ```
 
+```bash
+# Bruno
+
+curl -fsSL "https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x9FA6017ECABE0266" | gpg --dearmor | sudo tee /etc/apt/keyrings/bruno.gpg > /dev/null
+
+sudo chmod 644 /etc/apt/keyrings/bruno.gpg
+
+echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/bruno.gpg] http://debian.usebruno.com/ bruno stable" | sudo tee /etc/apt/sources.list.d/bruno.list
+
+sudo apt update
+sudo apt install -y bruno
+```
+
 ### LAMP Stack (if you need a local web server)
 
 Install Apache, MySQL, and PHP with Apache module:
