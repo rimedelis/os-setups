@@ -330,7 +330,7 @@ flutter run -d 192.168.1.64:42573
 ## Optional packages and extras
 
 ```bash
-sudo apt install -y vlc qbittorrent zram-tools
+sudo apt install -y vlc qbittorrent zram-tools gimp
 ```
 
 ```bash
